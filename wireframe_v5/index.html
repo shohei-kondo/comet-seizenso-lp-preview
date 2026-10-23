@@ -1,0 +1,1823 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>生前葬の企画・運営支援｜株式会社COMET</title>
+<style>
+:root {
+  --bg: #FAF7F2;
+  --surface: #FFFFFF;
+  --ink: #292D29;
+  --muted: #4F554F;
+  --btn-bg: #315447;
+  --btn-hover: #233e34;
+  --btn-text: #FFFFFF;
+  --accent: #B49A69;
+  --line: #E2DDD5;
+  --line-strong: #C4BCB0;
+  --soft: #F4EFEA;
+  --warm: #EFE9DF;
+  --dark-section: #292D29;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-bottom: 110px;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+button, a, summary {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+}
+a {
+  color: inherit;
+  text-underline-offset: 5px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h1, h2, h3, p, ul, ol, figure, blockquote {
+  margin: 0;
+}
+h1, h2, h3 {
+  line-height: 1.55;
+}
+h2 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: .035em;
+}
+h3 {
+  font-size: 20px;
+}
+p + p {
+  margin-top: 14px;
+}
+.wrap {
+  width: min(960px, calc(100% - 40px));
+  margin-inline: auto;
+}
+section {
+  padding: 64px 0;
+}
+.soft {
+  background: var(--soft);
+}
+.warm {
+  background: var(--warm);
+}
+
+/* 見出し装飾 */
+.section-heading {
+  text-align: center;
+  margin-bottom: 34px;
+}
+.section-heading:after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  margin: 20px auto 0;
+}
+.eyebrow {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: var(--muted);
+  margin-bottom: 9px;
+}
+.section-subnote {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: -18px;
+  margin-bottom: 28px;
+}
+
+/* ボタン共通（56px以上・白文字・深緑） */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 12px 24px;
+  border: 1px solid var(--btn-bg);
+  border-radius: 8px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  box-shadow: 0 4px 0 #1b2f28;
+  text-align: center;
+  transition: background .2s, transform .1s, box-shadow .1s;
+}
+.button:hover {
+  background: var(--btn-hover);
+}
+.button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #1b2f28;
+}
+.button:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+.button span {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.button-sub {
+  background: #FFFFFF;
+  color: var(--btn-bg);
+  border: 2px solid var(--btn-bg);
+  box-shadow: 0 4px 0 var(--line-strong);
+}
+.button-sub:hover {
+  background: var(--soft);
+  color: var(--btn-hover);
+}
+.button-sub:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--line-strong);
+}
+
+/* 最上部注意帯 */
+.draft-notice {
+  background: #EAE5DC;
+  border-bottom: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 12px 0;
+  text-align: center;
+}
+
+/* 仮バッジ */
+.provisional {
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 0 5px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #7A6337;
+  background: #FFFDF9;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
+/* ヘッダー */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 84px;
+}
+.brand {
+  flex: 0 1 170px;
+  min-width: 0;
+  padding: 10px 0;
+}
+.logo {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  letter-spacing: .1em;
+  line-height: 1.2;
+  border: 1px solid var(--line-strong);
+  padding: 8px 10px;
+  font-weight: 800;
+  text-align: center;
+  background: var(--bg);
+}
+.service-name {
+  margin-top: 5px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: nowrap;
+  background: var(--surface);
+}
+.service-name .provisional {
+  margin-left: 3px;
+}
+.header-note {
+  display: none;
+}
+.button-header {
+  flex: 0 1 200px;
+  min-width: 0;
+  padding: 10px 14px;
+  font-size: 14px;
+  min-height: 56px;
+  box-shadow: none;
+}
+
+/* ファーストビュー */
+.hero {
+  position: relative;
+  padding: 0;
+  background: var(--warm);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(250, 247, 242, 0.90) 0%, rgba(250, 247, 242, 0.85) 60%, rgba(250, 247, 242, 0.95) 100%);
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  min-height: 600px;
+  padding: 40px 0 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-copy {
+  position: relative;
+}
+.hero-label {
+  display: inline-block;
+  background: var(--surface);
+  padding: 8px 16px;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: 30px;
+  letter-spacing: .035em;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.hero h1 span {
+  background: rgba(255, 255, 255, 0.92);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 4px 8px;
+}
+.hero-sub {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 18px;
+  font-weight: 500;
+  line-height: 1.85;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+}
+.hero-sub p + p {
+  margin-top: 10px;
+}
+.badges {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 20px;
+}
+.badges li {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.55;
+  padding: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.badges li .provisional {
+  font-size: 11px;
+  padding: 0 3px;
+}
+.photo-note-hero {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* FV直下のシミュレーション誘導帯 */
+.hero-lead-cta {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 36px 0;
+  text-align: center;
+}
+.lead-cta-card {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.lead-cta-text {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.button-large {
+  max-width: 460px;
+  margin-inline: auto;
+  font-size: 18px;
+  padding: 16px 28px;
+}
+
+/* 問い合わせ帯（共通） */
+.booking {
+  padding: 44px 0;
+  background: var(--dark-section);
+  color: #FFFFFF;
+  text-align: center;
+}
+.booking .section-heading {
+  margin-bottom: 16px;
+}
+.booking .eyebrow {
+  color: #D6D0C5;
+}
+.booking h2 {
+  font-size: 24px;
+  color: #FFFFFF;
+}
+.booking .section-heading:after {
+  background: var(--accent);
+  margin-top: 14px;
+}
+.booking > .wrap > p {
+  font-size: 16px;
+  color: #E6E2DC;
+}
+.booking-card {
+  max-width: 620px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 24px 20px;
+  margin: 22px auto 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.calendar {
+  width: 100%;
+  font-size: 18px;
+}
+.booking-sub-action {
+  margin-top: 14px;
+}
+.booking-sub-action .button {
+  width: 100%;
+}
+
+/* 電話枠 */
+.phone {
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding-top: 18px;
+}
+.phone p {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.phone-placeholder {
+  border: 1px dashed var(--line-strong);
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  max-width: 380px;
+  margin: 8px auto 0;
+  background: var(--soft);
+  color: var(--muted);
+}
+.phone-notice {
+  font-size: 13px !important;
+  color: var(--muted) !important;
+  font-weight: normal !important;
+  margin-top: 8px !important;
+}
+
+/* チェックリスト（こんな想いはありませんか？） */
+.checks {
+  list-style: none;
+  padding: 0;
+}
+.checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+}
+.checks li:first-child {
+  border-top: 1px solid var(--line);
+}
+.checks li:before {
+  content: "✔";
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 800;
+  color: var(--btn-bg);
+  flex-shrink: 0;
+}
+.concern-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px 20px;
+  max-width: 760px;
+  margin: 0 auto;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+}
+
+/* 3つのこと */
+.reason-list {
+  display: grid;
+  gap: 22px;
+}
+.reason-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+}
+.reason-top {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  background: var(--warm);
+  border: 2px solid var(--accent);
+  color: #7A6337;
+  font: 700 24px Georgia, serif;
+}
+.reason-card h3 {
+  font-size: 20px;
+}
+.reason-body p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* たとえば、こんな一日 */
+.cards {
+  display: grid;
+  gap: 24px;
+}
+.scene {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+.event-photo {
+  margin: 0;
+  position: relative;
+}
+.scene-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.card-body {
+  padding: 22px;
+}
+.scene h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.scene details {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.scene summary {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--btn-bg);
+}
+.scene summary:after {
+  content: "＋";
+  font-size: 20px;
+}
+.scene details[open] summary:after {
+  content: "−";
+}
+.scene details p {
+  padding-bottom: 10px;
+  color: var(--muted);
+}
+
+/* あなたなら、誰に何を伝えたいですか？ */
+.questions {
+  display: grid;
+  gap: 18px;
+}
+.question-card {
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 24px;
+  background: var(--surface);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+}
+.question-no {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.question-card h3 {
+  margin: 8px 0 10px;
+  font-size: 20px;
+}
+.question-card p {
+  color: var(--muted);
+}
+
+/* サービスグリッド */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.service-tile {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-align: center;
+  padding: 22px 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+}
+.service-img-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 14px;
+  border: 2px solid var(--line-strong);
+  background: var(--soft);
+}
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.service-tile h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.service-tile p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* 料金ブロック（新・シミュレーション誘導型） */
+.price-lead-card {
+  max-width: 700px;
+  margin-inline: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px 22px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.price-lead-text {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+/* ご依頼の流れ（STEP 1〜6） */
+.flow {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 24px;
+}
+.flow li {
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 20px 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+}
+.flow li:not(:last-child):after {
+  content: "↓";
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  color: var(--accent);
+  line-height: 24px;
+  font-weight: 700;
+}
+.step {
+  font-family: Arial, sans-serif;
+  line-height: 1.1;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .08em;
+  min-width: 44px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.step b {
+  display: block;
+  font-size: 28px;
+  color: var(--btn-bg);
+  letter-spacing: 0;
+  margin-top: 2px;
+}
+.flow h3 {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 代表メッセージ */
+.message-layout {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 20px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+.message-portrait-wrap {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.message-layout figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  text-align: center;
+}
+.message-layout blockquote {
+  font-size: 17px;
+  line-height: 1.9;
+  position: relative;
+  padding-left: 20px;
+  border-left: 3px solid var(--accent);
+}
+.signature {
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--muted);
+}
+.signature strong {
+  font-size: 20px;
+  display: block;
+  color: var(--ink);
+  margin-top: 4px;
+}
+
+/* 第1号のお客様の帯 */
+.first {
+  background: var(--warm);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 48px 0;
+}
+.first-inner {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+.first-photo-wrap {
+  text-align: center;
+}
+.first-img {
+  width: 100%;
+  max-width: 360px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 auto;
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.photo-note-small {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.first-text {
+  text-align: center;
+}
+.first-text .section-heading {
+  margin-bottom: 18px;
+}
+.first-text .section-heading:after {
+  margin-top: 14px;
+}
+.first-text h2 {
+  font-size: 23px;
+}
+.first-text p {
+  max-width: 640px;
+  margin-inline: auto;
+}
+.first-text a {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--btn-bg);
+  display: inline-block;
+  margin-top: 12px;
+}
+
+/* よくある質問 */
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.faq-list summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 14px;
+  font-weight: 700;
+  min-height: 64px;
+}
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+.faq-list summary:before {
+  content: "Q";
+  font: bold 22px Georgia, serif;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.faq-list summary:after {
+  content: "＋";
+  font-size: 20px;
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--btn-bg);
+}
+.faq-list details[open] summary:after {
+  content: "−";
+}
+.answer {
+  padding: 0 16px 20px 44px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.answer:before {
+  content: "A. ";
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* 対応エリア */
+.area-layout {
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+.area-map-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 32px 20px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+.area-map-badge {
+  display: inline-block;
+  background: var(--warm);
+  border: 1px solid var(--accent);
+  color: #7A6337;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.map-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.map-labels > span {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 16px;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+.tags span {
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  background: var(--surface);
+  padding: 6px 14px;
+  font-weight: 700;
+}
+
+/* 会社概要テーブル */
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.company-table tr {
+  border-bottom: 1px solid var(--line);
+}
+.company-table tr:last-child {
+  border-bottom: none;
+}
+.company-table th, .company-table td {
+  font-size: 16px;
+  padding: 16px 14px;
+  vertical-align: top;
+}
+.company-table th {
+  width: 90px;
+  font-weight: 700;
+  background: var(--soft);
+  border-right: 1px solid var(--line);
+}
+.company-phone {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink);
+}
+
+/* フッター */
+.footer {
+  padding: 40px 0 120px;
+  background: var(--warm);
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+.footer strong {
+  font-size: 20px;
+  color: var(--ink);
+}
+.footer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+.footer nav a {
+  font-size: 15px;
+  padding: 6px;
+  color: var(--muted);
+}
+.footer nav a:hover {
+  color: var(--ink);
+}
+.footer small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* スマホ下部固定ボタン */
+.sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.06);
+  z-index: 100;
+}
+.sticky .button {
+  width: 100%;
+  font-size: 17px;
+  box-shadow: none;
+}
+
+/* ========================================================
+   レスポンシブ（タブレット・PC: 700px以上）
+   ======================================================== */
+@media (min-width: 700px) {
+  section {
+    padding: 80px 0;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  .header-inner {
+    min-height: 96px;
+  }
+  .logo {
+    font-size: 28px;
+  }
+  .header-note {
+    display: block;
+    font-size: 16px;
+    color: var(--muted);
+    margin-right: auto;
+  }
+  .button-header {
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+  .hero-inner {
+    min-height: 640px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .hero h1 {
+    font-size: 40px;
+    max-width: 700px;
+    line-height: 1.65;
+  }
+  .hero-sub {
+    max-width: 640px;
+    padding: 22px 26px;
+  }
+  .badges {
+    width: 440px;
+    gap: 16px;
+    margin: 28px 0 20px;
+  }
+  .badges li {
+    font-size: 15px;
+  }
+  .mobile-break {
+    display: none;
+  }
+  .booking {
+    padding: 56px 0;
+  }
+  .booking h2 {
+    font-size: 30px;
+  }
+  .booking-card {
+    padding: 30px 40px;
+  }
+  .calendar {
+    font-size: 20px;
+  }
+  .reason-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+  .questions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .service-tile {
+    padding: 26px 18px;
+  }
+  .service-img-wrap {
+    width: 90px;
+    height: 90px;
+  }
+  .service-tile h3 {
+    font-size: 20px;
+  }
+  .flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .flow li {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 14px;
+  }
+  .flow li:nth-child(1):after,
+  .flow li:nth-child(2):after,
+  .flow li:nth-child(4):after,
+  .flow li:nth-child(5):after {
+    content: "→";
+    top: 50%;
+    left: auto;
+    right: -20px;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+  .flow li:nth-child(3):after {
+    content: "↓";
+    top: auto;
+    left: 50%;
+    bottom: -28px;
+    transform: translateX(-50%);
+  }
+  .flow li:nth-child(6):after {
+    display: none;
+  }
+  .flow h3 {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .message-layout {
+    grid-template-columns: 200px 1fr;
+    gap: 36px;
+    padding: 36px 32px;
+  }
+  .first-inner {
+    grid-template-columns: 320px 1fr;
+    gap: 36px;
+    text-align: left;
+  }
+  .first-text {
+    text-align: left;
+  }
+  .first-text .section-heading {
+    text-align: left;
+  }
+  .first-text .section-heading:after {
+    margin-left: 0;
+  }
+  .first-text p {
+    margin-inline: 0;
+  }
+  .area-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .company-table th {
+    width: 150px;
+    padding-left: 20px;
+  }
+  .company-table td {
+    padding-left: 20px;
+  }
+  .footer {
+    padding: 48px 0 36px;
+  }
+  .footer nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .sticky {
+    display: none;
+  }
+}
+
+/* ========================================================
+   デスクトップ大画面（1000px以上）のSTEP調整
+   ======================================================== */
+@media (min-width: 1000px) {
+  .flow {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .flow li {
+    padding: 20px 10px;
+  }
+  .flow li:not(:last-child):after {
+    content: "→" !important;
+    top: 50% !important;
+    left: auto !important;
+    right: -14px !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+  }
+  .flow li:last-child:after {
+    display: none !important;
+  }
+}
+
+/* ========================================================
+   超小型端末（320px〜350px）の横はみ出し防止
+   ======================================================== */
+@media (max-width: 350px) {
+  .wrap {
+    width: calc(100% - 24px);
+  }
+  .header-inner {
+    gap: 8px;
+  }
+  .brand {
+    flex-basis: 135px;
+  }
+  .logo {
+    font-size: 20px;
+    padding: 6px 8px;
+  }
+  .service-name {
+    font-size: 11px;
+  }
+  .button-header {
+    font-size: 13px;
+    padding: 8px 10px;
+    flex-basis: 145px;
+    min-height: 56px;
+  }
+  .hero h1 {
+    font-size: 24px;
+  }
+  .badges {
+    gap: 6px;
+  }
+  .badges li {
+    font-size: 11px;
+    padding: 4px;
+  }
+  .button {
+    font-size: 16px;
+    padding: 12px 14px;
+    min-height: 56px;
+  }
+  .service-grid {
+    gap: 10px;
+  }
+  .service-tile {
+    padding: 16px 8px;
+  }
+  .company-table th {
+    width: 85px;
+    font-size: 16px;
+    padding: 12px 8px;
+  }
+  .company-table td {
+    font-size: 16px;
+    padding: 12px 8px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- 最上部注意帯 -->
+<aside class="draft-notice" aria-label="打ち合わせ用確認版の注意">
+  <div class="wrap">
+    この画面は打ち合わせ用の確認版です。写真はCOMETのイベント運営の実績写真で、エリア・名称は仮置きです。
+  </div>
+</aside>
+
+<!-- ヘッダー (Block 0) -->
+<header data-block="0">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="logo" aria-label="COMET ロゴ枠">COMET</div>
+      <div class="service-name">サービス名（未定）<small class="provisional">仮</small></div>
+    </div>
+    <p class="header-note">人生の節目の会をサポート</p>
+    <a class="button button-header" href="../mockup_survey_v3/index.html">料金シミュレーション</a>
+  </div>
+</header>
+
+<main>
+  <!-- ファーストビュー (Block 1) -->
+  <section class="hero" data-block="1">
+    <div class="hero-bg">
+      <img src="../photos/P01_1.jpg" alt="周年パーティー宴会場の円卓と拍手する参加者" class="hero-bg-img">
+      <div class="hero-bg-overlay"></div>
+    </div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="hero-label">生前葬の企画・運営支援</p>
+        <h1><span>これまでの感謝と、<br>これからを託す思いを<br>伝える一日。</span></h1>
+        <div class="hero-sub">
+          <p>仕事の仲間やお世話になった人たちへ、あなたの感謝の言葉を届ける節目の会をしませんか。</p>
+          <p>COMETがあなたと周囲の皆様が主役の一日をプロデュースします。</p>
+        </div>
+        <ul class="badges">
+          <li><span>東京・名古屋<br>・大阪 <small class="provisional">仮</small></span></li>
+          <li><span>企画から<br>当日運営まで</span></li>
+          <li><span>Zoom・対面<br>でご相談</span></li>
+        </ul>
+        <p class="photo-note-hero">※COMETのイベント運営の実績写真です（生前葬の写真ではありません）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FV直下 シミュレーション誘導帯 -->
+  <section class="hero-lead-cta" data-block="1-cta">
+    <div class="wrap">
+      <div class="lead-cta-card">
+        <p class="lead-cta-text">いくつかの質問に答えるだけで、あなたに合った会のかたちと費用の目安が分かります</p>
+        <a class="button button-large" href="../mockup_survey_v3/index.html">
+          料金シミュレーション（約1分）<span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 問い合わせ帯 1 (Block 2) -->
+  <section class="booking" id="booking-2" data-block="2">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">CONSULTATION</span>
+        <h2>まずは<br class="mobile-break">お問い合わせください</h2>
+      </div>
+      <p>オンライン（Zoom）／対面のご希望は、お問い合わせ後に調整します</p>
+      <div class="booking-card">
+        <a class="button calendar" href="../mockup_survey_v3/index.html">
+          料金シミュレーションを試す<span aria-hidden="true">→</span>
+        </a>
+        <div class="booking-sub-action">
+          <a class="button button-sub" href="../mockup_survey_v3/index.html#form">
+            フォームで問い合わせる
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- こんな想いはありませんか？ (Block 3) -->
+  <section data-block="3">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">YOUR THOUGHTS</span>
+        <h2>こんな想いはありませんか？</h2>
+      </div>
+      <div class="concern-card">
+        <ul class="checks">
+          <li>元気なうちに、お世話になった人へ感謝を伝えたい</li>
+          <li>事業を引き継ぐ前に、仲間や取引先に挨拶する場がほしい</li>
+          <li>葬儀では本人が直接お礼を言えない</li>
+          <li>家族にも、これまでの話をゆっくり聞いてほしい</li>
+          <li>親の節目に、家族から会を贈りたい</li>
+          <li>何から準備すればいいか分からない</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMETにお任せいただける3つのこと (Block 4) -->
+  <section class="soft" data-block="4">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">REASON</span>
+        <h2>COMETにお任せいただける<br>3つのこと</h2>
+      </div>
+      <div class="reason-list">
+        <article class="reason-card">
+          <div class="reason-top">
+            <span class="number">01</span>
+            <h3>企画から当日運営まで<br>一貫して担当</h3>
+          </div>
+          <div class="reason-body">
+            <p>会の企画から準備、当日の進行まで。伝えたい想いを伺い、一緒に形にします。</p>
+          </div>
+        </article>
+        <article class="reason-card">
+          <div class="reason-top">
+            <span class="number">02</span>
+            <h3>ご希望の場所で、対面のご相談</h3>
+          </div>
+          <div class="reason-body">
+            <p>東京・名古屋・大阪 <small class="provisional">仮</small> を中心に対面で対応。その他の地域はご相談ください。</p>
+          </div>
+        </article>
+        <article class="reason-card">
+          <div class="reason-top">
+            <span class="number">03</span>
+            <h3>「人生の節目に寄り添う」<br>イベント会社</h3>
+          </div>
+          <div class="reason-body">
+            <p>大切な節目に寄り添う存在を目指して。イベントの企画・運営を通じて、会づくりを支えます。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- たとえば、こんな一日 (Block 5) -->
+  <section class="warm" data-block="5">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">EXAMPLE</span>
+        <h2>たとえば、こんな一日</h2>
+      </div>
+      <p class="section-subnote">※COMETのイベント運営の実績写真です（生前葬の写真ではありません）</p>
+      <div class="cards">
+        <article class="scene">
+          <figure class="event-photo">
+            <img src="../photos/P02_1.jpg" alt="当日準備でスタッフが書類を確認している様子" class="scene-img">
+          </figure>
+          <div class="card-body">
+            <h3>招くとき</h3>
+            <p>「ありがとうを、直接伝えたくて。」<br>会いたい人へ、あなたの想いを添えて。</p>
+            <details>
+              <summary>詳細を見る</summary>
+              <p>誰を招くか、どんな言葉で誘うか。一緒に考えるところから始めます。</p>
+            </details>
+          </div>
+        </article>
+        <article class="scene">
+          <figure class="event-photo">
+            <img src="../photos/P03_1.jpg" alt="拍手で迎える表彰・挨拶の場面" class="scene-img">
+          </figure>
+          <div class="card-body">
+            <h3>迎えるとき</h3>
+            <p>「久しぶり。今日は来てくれてありがとう。」<br>顔を合わせた瞬間から、会が始まります。</p>
+            <details>
+              <summary>詳細を見る</summary>
+              <p>お一人おひとりと挨拶を交わせるよう、迎え方や会場の使い方を考えます。</p>
+            </details>
+          </div>
+        </article>
+        <article class="scene">
+          <figure class="event-photo">
+            <img src="../photos/P04_1.jpg" alt="ホテル宴会場の円卓で食事・歓談する参加者" class="scene-img">
+          </figure>
+          <div class="card-body">
+            <h3>一緒に過ごすとき</h3>
+            <p>「あのときのこと、覚えていますか。」<br>思い出を囲み、ゆっくり語り合う時間に。</p>
+            <details>
+              <summary>詳細を見る</summary>
+              <p>食事や会話を楽しみながら、これまでの歩みを分かち合う場面を思い描きます。</p>
+            </details>
+          </div>
+        </article>
+        <article class="scene">
+          <figure class="event-photo">
+            <img src="../photos/P05_2.jpg" alt="ステージでの表彰・授与の様子" class="scene-img">
+          </figure>
+          <div class="card-body">
+            <h3>結びのとき</h3>
+            <p>「これからも、よろしくお願いします。」<br>感謝と、これからを託す思いを言葉に。</p>
+            <details>
+              <summary>詳細を見る</summary>
+              <p>集まってくださった方へ、今の想いを届ける締めくくりを考えます。</p>
+            </details>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 問い合わせ帯 2 (Block 6) -->
+  <section class="booking" id="booking-6" data-block="6">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">CONSULTATION</span>
+        <h2>まずは<br class="mobile-break">お問い合わせください</h2>
+      </div>
+      <p>オンライン（Zoom）／対面のご希望は、お問い合わせ後に調整します</p>
+      <div class="booking-card">
+        <a class="button calendar" href="../mockup_survey_v3/index.html">
+          料金シミュレーションを試す<span aria-hidden="true">→</span>
+        </a>
+        <div class="booking-sub-action">
+          <a class="button button-sub" href="../mockup_survey_v3/index.html#form">
+            フォームで問い合わせる
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- あなたなら、誰に何を伝えたいですか？ (Block 7) -->
+  <section data-block="7">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">YOUR DAY</span>
+        <h2>あなたなら、<br>誰に何を伝えたいですか？</h2>
+      </div>
+      <div class="questions">
+        <article class="question-card">
+          <span class="question-no">01</span>
+          <h3>誰と過ごしたいか</h3>
+          <p>仕事の仲間、家族、友人。<br>思い浮かぶ顔はありますか。</p>
+        </article>
+        <article class="question-card">
+          <span class="question-no">02</span>
+          <h3>何を伝えたいか</h3>
+          <p>これまでの感謝。<br>これからを託す想い。</p>
+        </article>
+        <article class="question-card">
+          <span class="question-no">03</span>
+          <h3>どんな過ごし方がいいか</h3>
+          <p>食事を囲む、思い出を語る。<br>あなたらしい時間を。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- サービス：企画から当日運営まで、まとめてお任せください (Block 8) -->
+  <section class="soft" data-block="8">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">SERVICE</span>
+        <h2>企画から当日運営まで、<br>まとめてお任せください</h2>
+      </div>
+      <p class="section-subnote">※COMETのイベント運営の実績写真です（生前葬の写真ではありません）</p>
+      <div class="service-grid">
+        <article class="service-tile">
+          <div class="service-img-wrap">
+            <img src="../photos/P06_2.jpg" alt="資料に指を置き企画している手元" class="service-img">
+          </div>
+          <h3>会の企画</h3>
+          <p>想いに合わせた<br>会の形を考えます</p>
+        </article>
+        <article class="service-tile">
+          <div class="service-img-wrap">
+            <img src="../photos/P07_1.jpg" alt="バンケットホール全景" class="service-img">
+          </div>
+          <h3>会場探し・手配</h3>
+          <p>集まり方に合う<br>場所を探します</p>
+        </article>
+        <article class="service-tile">
+          <div class="service-img-wrap">
+            <img src="../photos/P08_1.jpg" alt="ケータリングの料理が並ぶテーブル" class="service-img">
+          </div>
+          <h3>お食事の手配</h3>
+          <p>会の雰囲気に合う<br>お食事を考えます</p>
+        </article>
+        <article class="service-tile">
+          <div class="service-img-wrap">
+            <img src="../photos/P02_3.jpg" alt="スマホとPCで連絡する手元" class="service-img">
+          </div>
+          <h3>ご招待のご案内</h3>
+          <p>大切な方を招く<br>準備を支えます</p>
+        </article>
+        <article class="service-tile">
+          <div class="service-img-wrap">
+            <img src="../photos/P09_1.jpg" alt="舞台照明・スクリーン・カメラが並ぶステージ" class="service-img">
+          </div>
+          <h3>演出</h3>
+          <p>想いが伝わる<br>場面を考えます</p>
+        </article>
+        <article class="service-tile">
+          <div class="service-img-wrap">
+            <img src="../photos/P10_1.jpg" alt="マイクを持つ登壇者・司会進行" class="service-img">
+          </div>
+          <h3>当日の進行</h3>
+          <p>皆様との時間を<br>現場で支えます</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金について (Block 9 - 新・シミュレーション誘導型) -->
+  <section class="warm" data-block="9">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">PRICE</span>
+        <h2>料金について</h2>
+      </div>
+      <div class="price-lead-card">
+        <p class="price-lead-text">ご費用は、開催場所・規模・当日の内容によって大きく変わります。いくつかの質問に答えていただくと、あなたに合った会のかたちと費用の目安をご覧いただけます。</p>
+        <a class="button button-large" href="../mockup_survey_v3/index.html">
+          料金シミュレーション（約1分）<span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ご依頼の流れ (Block 10 - FLOW) -->
+  <section data-block="10">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">FLOW</span>
+        <h2>ご依頼の流れ</h2>
+      </div>
+      <ol class="flow">
+        <li>
+          <span class="step">STEP<b>1</b></span>
+          <h3>料金シミュレーションで目安を確認</h3>
+        </li>
+        <li>
+          <span class="step">STEP<b>2</b></span>
+          <h3>フォームで送信</h3>
+        </li>
+        <li>
+          <span class="step">STEP<b>3</b></span>
+          <h3>自動返信メールのリンクから面談日を選ぶ</h3>
+        </li>
+        <li>
+          <span class="step">STEP<b>4</b></span>
+          <h3>面談（Zoom・対面）</h3>
+        </li>
+        <li>
+          <span class="step">STEP<b>5</b></span>
+          <h3>企画・お見積り</h3>
+        </li>
+        <li>
+          <span class="step">STEP<b>6</b></span>
+          <h3>当日</h3>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 代表メッセージ (Block 11 - MESSAGE) -->
+  <section class="soft" data-block="11">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">MESSAGE</span>
+        <h2>代表メッセージ</h2>
+      </div>
+      <div class="message-layout">
+        <figure class="event-photo">
+          <div class="message-portrait-wrap">
+            <img src="../photos/P11_1.jpg" alt="株式会社COMET 代表取締役 井藤 栞" class="portrait-img">
+          </div>
+          <figcaption><small>※COMETのイベント運営の実績写真です（生前葬の写真ではありません）</small></figcaption>
+        </figure>
+        <div class="message-content">
+          <blockquote>大切にしているのは『イベントをやって終わり』にしないこと。そして、入学式から葬儀まで、人生の大事な節目にCOMETが寄り添えるワンストップの存在を目指しています。</blockquote>
+          <p class="signature">株式会社COMET<strong>代表取締役 井藤 栞</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第1号のお客様と、一緒につくらせてください (Block 12 - OUR FIRST STEP) -->
+  <section class="first" data-block="12">
+    <div class="wrap">
+      <div class="first-inner">
+        <div class="first-photo-wrap">
+          <img src="../photos/P12_1.jpg" alt="COMET サービスページのスタッフ" class="first-img">
+          <p class="photo-note-small">※COMETのイベント運営の実績写真です</p>
+        </div>
+        <div class="first-text">
+          <div class="section-heading">
+            <span class="eyebrow">OUR FIRST STEP</span>
+            <h2>第1号のお客様と、<br>一緒につくらせてください。</h2>
+          </div>
+          <p>このサービスでの開催は、COMETにとっても初めての挑戦です。第1号のお客様と、一緒につくらせてください。</p>
+          <p><a href="https://comet-event.co.jp/achievements/" target="_blank" rel="noopener noreferrer">周年パーティーなど、一般のイベント運営の実績はこちら →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 問い合わせ帯 3 (Block 13) -->
+  <section class="booking" id="booking-13" data-block="13">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">CONSULTATION</span>
+        <h2>まずは<br class="mobile-break">お問い合わせください</h2>
+      </div>
+      <p>オンライン（Zoom）／対面のご希望は、お問い合わせ後に調整します</p>
+      <div class="booking-card">
+        <a class="button calendar" href="../mockup_survey_v3/index.html">
+          料金シミュレーションを試す<span aria-hidden="true">→</span>
+        </a>
+        <div class="booking-sub-action">
+          <a class="button button-sub" href="../mockup_survey_v3/index.html#form">
+            フォームで問い合わせる
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- よくある質問 (Block 14 - QUESTION) -->
+  <section data-block="14">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">QUESTION</span>
+        <h2>よくある質問</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>どのような会ですか？</summary>
+          <p class="answer">ご本人が大切な方々と集まり、感謝や想いを直接伝える会です。</p>
+        </details>
+        <details>
+          <summary>家族からの相談もできる？</summary>
+          <p class="answer">ご本人の想いを大切にしながら、ご家族からもご相談いただけます。</p>
+        </details>
+        <details>
+          <summary>何から決めればいい？</summary>
+          <p class="answer">まずは、誰と過ごしたいか、何を伝えたいかをお聞かせください。</p>
+        </details>
+        <details>
+          <summary>対応エリアは？</summary>
+          <p class="answer">東京・名古屋・大阪 <small class="provisional">仮</small> を中心に対面で対応し、その他の地域はご相談を承ります。</p>
+        </details>
+        <details>
+          <summary>家族が費用を分担して開くこともできますか？</summary>
+          <p class="answer">ご家族で費用を分担する形も含め、会の開き方をご相談いただけます。</p>
+        </details>
+        <details>
+          <summary>費用はいつ決まる？</summary>
+          <p class="answer">ご希望の内容を伺い、企画とあわせてお見積りをご案内します。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 対応エリア (Block 15 - AREA) -->
+  <section class="warm" data-block="15">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">AREA</span>
+        <h2>対応エリア</h2>
+      </div>
+      <div class="area-layout">
+        <div class="area-map-card" role="region" aria-label="対面での対応エリア案内図">
+          <div class="area-map-badge">対面での対応エリア</div>
+          <div class="map-labels">
+            <span>東京 <small class="provisional">仮</small></span>
+            <span>名古屋 <small class="provisional">仮</small></span>
+            <span>大阪 <small class="provisional">仮</small></span>
+          </div>
+        </div>
+        <div>
+          <h3>対面で、想いを伺います。</h3>
+          <div class="tags">
+            <span>東京 <small class="provisional">仮</small></span>
+            <span>名古屋 <small class="provisional">仮</small></span>
+            <span>大阪 <small class="provisional">仮</small></span>
+          </div>
+          <p>東京・名古屋・大阪 <small class="provisional">仮</small> を中心に対面で対応します。</p>
+          <p>その他の地域はご相談ください</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 会社概要 (Block 16 - COMPANY) -->
+  <section data-block="16" id="company">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">COMPANY</span>
+        <h2>会社概要</h2>
+      </div>
+      <table class="company-table">
+        <tbody>
+          <tr>
+            <th scope="row">会社名</th>
+            <td>株式会社COMET</td>
+          </tr>
+          <tr>
+            <th scope="row">所在地</th>
+            <td>〒467-0064<br>愛知県名古屋市瑞穂区弥富通3丁目9番地の1 坂野マンション</td>
+          </tr>
+          <tr>
+            <th scope="row">代表者</th>
+            <td>代表取締役 井藤 栞</td>
+          </tr>
+          <tr>
+            <th scope="row">設立</th>
+            <td>2024年7月</td>
+          </tr>
+          <tr>
+            <th scope="row">営業時間</th>
+            <td>9:00〜18:00</td>
+          </tr>
+          <tr>
+            <th scope="row">電話番号</th>
+            <td>
+              <div class="company-phone">電話番号（未定）</div>
+              <p class="phone-notice">※お電話がつながりにくい場合は、折り返しご連絡いたします</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 問い合わせ帯 4 / 最終 (Block 17 - booking-17) -->
+  <section class="booking final-booking" id="booking-17" data-block="17">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">CONSULTATION</span>
+        <h2>まずは<br class="mobile-break">お問い合わせください</h2>
+      </div>
+      <p>オンライン（Zoom）／対面のご希望は、お問い合わせ後に調整します</p>
+      <div class="booking-card">
+        <a class="button calendar" href="../mockup_survey_v3/index.html">
+          料金シミュレーションを試す<span aria-hidden="true">→</span>
+        </a>
+        <div class="booking-sub-action">
+          <a class="button button-sub" href="../mockup_survey_v3/index.html#form">
+            フォームで問い合わせる
+          </a>
+        </div>
+        <div class="phone">
+          <p>お電話でのご相談</p>
+          <div class="phone-placeholder">電話番号（未定）</div>
+          <p class="phone-notice">※お電話がつながりにくい場合は、折り返しご連絡いたします</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- フッター (Block 18) -->
+<footer class="footer" data-block="18">
+  <div class="wrap">
+    <strong>株式会社COMET</strong>
+    <nav aria-label="フッター">
+      <a href="https://comet-event.co.jp/privacy/" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+      <a href="#company">会社概要</a>
+    </nav>
+    <small>© COMET Co., Ltd.</small>
+  </div>
+</footer>
+
+<!-- スマホ画面下部固定ボタン -->
+<div class="sticky">
+  <a class="button" href="../mockup_survey_v3/index.html">
+    料金シミュレーション（約1分）<span aria-hidden="true">→</span>
+  </a>
+</div>
+
+</body>
+</html>

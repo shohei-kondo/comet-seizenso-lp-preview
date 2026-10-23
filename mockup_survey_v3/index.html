@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="ja">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>感謝を伝える一日を考える、最大8つの質問｜株式会社COMET</title>
+<style>
+:root{color-scheme:light;--paper:#FAF7F2;--ink:#292D29;--green:#315447;--muted:#4F554F;--gold:#B49A69;--line:#d7ddd7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-size:18px;line-height:1.8;overflow-wrap:anywhere}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+button:disabled{cursor:default}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--green);outline-offset:4px}
+h1,h2,h3,h4,p{margin:0}
+h1,h2,h3,h4{line-height:1.55}
+h1{font-size:clamp(28px,6vw,36px);font-weight:650;letter-spacing:.035em}
+h2{font-size:26px}
+h3{font-size:21px}
+p+p{margin-top:14px}
+[hidden]{display:none!important}
+.notice{margin:0;padding:12px 18px;border-bottom:1px solid var(--line);background:#eeeee7;color:var(--muted);font-size:16px;line-height:1.6;text-align:center}
+.notice span{display:block;max-width:520px;margin:auto}
+.progress-bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.progress-inner{max-width:560px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:16px}
+.dots{display:flex;gap:5px}
+.dot{width:18px;height:4px;border-radius:3px;background:#d7ddd7}
+.dot.on{background:var(--green)}
+main{max-width:560px;margin:auto;padding:0 22px 48px}
+.intro{padding:36px 0 8px;scroll-margin-top:85px}
+.company{font-size:16px;color:var(--muted);margin-bottom:26px}
+.eyebrow{color:var(--muted);font-size:16px;letter-spacing:.08em;margin-bottom:12px}
+.gold-line{width:42px;height:3px;background:var(--gold);margin:24px 0}
+.intro-copy{margin-top:20px}
+.note{font-size:16px;color:var(--muted);line-height:1.7}
+.intro .note{margin-top:18px}
+.placeholder{display:flex;align-items:center;justify-content:center;text-align:center;background:#eeefed;border:1px solid #d8dcd8;color:var(--muted);min-height:132px;padding:24px;margin-top:24px;font-size:16px;border-radius:4px}
+.question{padding:34px 0;border-bottom:1px solid var(--line);scroll-margin-top:84px}
+.question h2:focus,.result h2:focus,.form-view h2:focus,.thanks-view h2:focus,#intro-title:focus{outline:none}
+.question .hint{color:var(--muted);margin-top:12px;font-size:16px}
+.choices{display:grid;gap:12px;margin-top:24px}
+.choice{display:flex;align-items:center;gap:14px;position:relative;width:100%;min-height:68px;background:#fff;border:1px solid #909b93;border-radius:8px;color:var(--ink);text-align:left;padding:17px 18px;line-height:1.6;cursor:pointer}
+.choice .copy{flex:1;min-width:0}
+.choice .sub{display:block;font-size:16px;color:var(--muted);margin-top:4px}
+.choice::after{content:'›';color:var(--green);font-size:26px;line-height:1;flex-shrink:0}
+.choice[aria-pressed=true],.choice:has(input:checked){border:2px solid var(--green);padding:16px 17px;background:#edf2ed}
+.choice[aria-pressed=true]::after{content:'✓';font-size:21px}
+.choice:has(input)::after{content:none}
+.choice input[type=checkbox],.choice input[type=radio]{width:24px;height:24px;accent-color:var(--green);margin:0;flex:0 0 24px}
+.choice:has(input:focus-visible){outline:3px solid var(--green);outline-offset:4px}
+.other-input-wrap{margin-top:10px;padding-top:10px;border-top:1px dashed #c0c6c0}
+.other-input-wrap label{display:block;font-size:15px;color:var(--muted);margin-bottom:6px}
+.other-text-input{width:100%;min-height:46px;padding:10px 14px;border:1px solid #909b93;border-radius:6px;background:#fff;font-size:16px}
+.primary{display:block;width:100%;min-height:60px;padding:16px 18px;background:var(--green);color:white;border:2px solid var(--green);border-radius:8px;line-height:1.6;font-weight:600;text-align:center}
+.primary:disabled{background:#e2e6e0;border-color:#c5cec7;color:var(--muted);cursor:default}
+.next{margin-top:20px}
+.back,.restart{display:block;min-height:56px;margin-top:16px;padding:12px 2px;background:transparent;border:0;color:var(--green);text-decoration:underline;text-underline-offset:5px;text-align:left;font-size:16px}
+.back::before{content:'← ';text-decoration:none}
+.result{padding-top:40px;scroll-margin-top:84px}
+.thanks{color:var(--muted);font-size:18px;margin-bottom:12px}
+.feeling-quote{margin:20px 0 0;padding:16px 18px;background:#fff;border-left:4px solid var(--gold);border-radius:0 6px 6px 0;font-size:17px;line-height:1.7}
+.feeling-quote strong{display:block;font-size:15px;color:var(--muted);margin-bottom:4px;font-weight:600}
+.proposal{background:#fff;border-top:3px solid var(--gold);padding:26px 22px;margin-top:26px;border-radius:0 0 8px 8px}
+.proposal .eyebrow{margin-bottom:14px}
+.proposal h3{font-size:27px}
+.proposal p:last-child{margin-top:18px}
+.two-parts{margin-top:24px;display:grid;gap:14px}
+.part{padding:20px;background:#eeeee7;border-radius:6px;border-top:2px solid var(--gold)}
+.part p{margin-top:8px}
+.result-section{margin-top:36px;scroll-margin-top:84px}
+.venue-box{padding:24px;background:#fff;border:1px solid var(--line);border-radius:8px}
+.venue-type{font-size:24px;font-weight:650;color:var(--green);margin-top:12px;line-height:1.5}
+.venue-badge{display:inline-block;background:#edf2ed;border:1px solid var(--green);color:var(--green);font-size:14px;padding:3px 10px;border-radius:4px;margin-top:10px;font-weight:600}
+.program-list{margin:18px 0 0;padding-left:1.4em}
+.program-list li+li{margin-top:14px}
+.special-list{list-style:none;padding:0;margin:18px 0 0}
+.special-list li{padding:18px 0;border-bottom:1px solid var(--line)}
+.special-list strong{display:block;font-size:18px}
+.special-list .special-meta{display:flex;gap:10px;align-items:center;margin:6px 0}
+.special-list .tag{background:#eeeee7;color:var(--muted);padding:2px 8px;border-radius:4px;font-size:14px}
+.special-list .price-tag{font-weight:600;color:var(--green);font-size:15px}
+.special-list p{margin-top:6px}
+.special-joint-note{margin-top:14px;padding:12px 14px;background:#edf2ed;border-radius:6px;font-size:15px;line-height:1.6}
+.words-copy{margin-top:16px}
+.discussion-list{margin:22px 0 0}
+.discussion-list dt{font-weight:600;margin-top:22px}
+.discussion-list dd{margin:6px 0 0}
+.price-box{padding:24px;background:#fff;border:1px solid var(--line);border-radius:8px}
+.price-details{margin-top:16px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.price-item{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 0}
+.price-item-title{font-size:16px;color:var(--muted);flex:1}
+.price-item-val{font-size:17px;font-weight:600;text-align:right}
+.price-subitems{margin:4px 0 12px;padding-left:14px;list-style:none}
+.price-subitems li{display:flex;justify-content:space-between;gap:10px;font-size:15px;padding:3px 0;color:var(--muted)}
+.price-total-block{margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.price-total-label{font-size:18px;font-weight:650}
+.price-total-val{font-size:clamp(24px,5vw,28px);font-weight:700;color:var(--green);text-align:right}
+.price-box .note{margin-top:14px}
+.family-note,.fee-note{margin-top:18px!important}
+.support-list{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.support-list li{background:#eeeee7;border-radius:4px;padding:13px 12px;font-size:18px}
+.support-list li::before{content:'✓ ';color:var(--green)}
+.contact{border-top:1px solid var(--line);padding-top:30px}
+.contact .primary{margin-top:20px}
+.contact .note{margin-top:12px}
+.restart{margin:8px auto 0;text-align:center}
+.form-view,.thanks-view{padding-top:40px;scroll-margin-top:84px}
+.form-summary-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 20px;margin-top:22px}
+.summary-dl{margin:12px 0 0}
+.summary-dl dt{font-weight:600;color:var(--muted);font-size:15px;margin-top:12px}
+.summary-dl dt:first-child{margin-top:0}
+.summary-dl dd{margin:4px 0 0;font-size:16px;line-height:1.6}
+.form-fields{margin-top:28px}
+.form-group{margin-top:20px}
+.form-label{display:block;font-weight:600;font-size:17px;margin-bottom:8px}
+.badge-req{font-size:13px;color:#b42318;background:#fee4e2;padding:2px 7px;border-radius:4px;margin-left:8px;font-weight:600;vertical-align:middle}
+.badge-opt{font-size:13px;color:var(--muted);background:#eee;padding:2px 7px;border-radius:4px;margin-left:8px;font-weight:normal;vertical-align:middle}
+.form-control{width:100%;min-height:52px;padding:12px 14px;border:1px solid #909b93;border-radius:6px;background:#fff;font-size:17px;line-height:1.6}
+textarea.form-control{min-height:120px;resize:vertical}
+.form-control:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.error-box{margin-top:22px;padding:16px 18px;background:#fef3f2;border:1px solid #fecdca;border-radius:8px;color:#b42318;font-size:16px;line-height:1.6}
+.error-box ul{margin:8px 0 0;padding-left:22px}
+.mail-sample{margin-top:32px;padding:22px;background:#eeeee7;border:1px solid var(--line);border-radius:8px}
+.mail-sample h3{font-size:17px;color:var(--ink);margin-bottom:12px}
+.mail-body{background:#fff;border:1px solid #d7ddd7;border-radius:6px;padding:18px;font-size:14px;line-height:1.75;white-space:pre-wrap;color:var(--ink)}
+.footer{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);font-size:16px;color:var(--muted);text-align:center}
+@media (hover:hover){
+.choice:hover{border-color:var(--green);background:#f0f4ef}
+.primary:not(:disabled):hover{background:#254236}
+}
+@media (max-width:350px){
+h1{font-size:25px}
+main{padding-left:16px;padding-right:16px}
+.progress-inner{padding-left:16px;padding-right:16px}
+.dot{width:14px}
+h2{font-size:24px}
+.proposal{padding:22px 18px}
+.support-list{grid-template-columns:1fr}
+.price-total-block{flex-direction:column;gap:6px}
+.price-total-val{text-align:left}
+}
+@media (prefers-reduced-motion:reduce){
+*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<p class="notice"><span>この画面は検討用のモックアップです。名称・料金はすべて仮置きです。</span></p>
+<div class="progress-bar"><div class="progress-inner"><span id="progress" role="status" aria-live="polite">質問 1/7</span><span class="dots" aria-hidden="true"><i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></span></div></div>
+<main>
+
+<div id="survey-view">
+<header class="intro" id="intro">
+<p class="company">株式会社COMET<br>名古屋のイベント会社</p>
+<p class="eyebrow">大切な人と、過ごしたい一日。</p>
+<h1 id="intro-title" tabindex="-1">あなたの<br>「感謝を伝える一日」<br>のかたちが見つかる、<br><span id="intro-qcount">最大8つの質問</span></h1>
+<div class="gold-line" aria-hidden="true"></div>
+<p class="intro-copy">タップで答えるだけ。1分ほどで、あなたに合った会のかたちと費用の目安（仮）をご提案します。</p>
+<p class="note">「生前葬」とも呼ばれる、感謝を伝える会をご一緒に考えます。</p>
+<div class="placeholder">イメージ：大切な人と食卓を囲み、<br>笑顔で言葉を交わすひととき</div>
+</header>
+
+<section class="question" id="q1" aria-labelledby="q1-title">
+<p class="eyebrow" data-topic="誰のために"></p>
+<h2 id="q1-title" tabindex="-1">どなたのための会を<br>お考えですか？</h2>
+<p class="hint" id="q1-hint">近いものをひとつお選びください。</p>
+<div class="choices" role="group" aria-labelledby="q1-title" aria-describedby="q1-hint">
+<button class="choice" data-value="self" aria-pressed="false"><span class="copy">ご自身のため<span class="sub">大切な人へ、ご自身の言葉で。</span></span></button>
+<button class="choice" data-value="family" aria-pressed="false"><span class="copy">ご家族のため<span class="sub">親・パートナーなど、大切な方を囲んで。</span></span></button>
+</div>
+<button class="back">ひとつ前に戻る</button>
+</section>
+
+<section class="question" id="q2" aria-labelledby="q2-title" hidden>
+<p class="eyebrow" data-topic="こんな想い"></p>
+<h2 id="q2-title" tabindex="-1">こんな想いは<br>ありませんか？</h2>
+<p class="hint" id="q2-hint">いくつでも選べます。選んだら「次へ」。</p>
+<div class="choices" role="group" aria-labelledby="q2-title" aria-describedby="q2-hint">
+<label class="choice"><input id="feel-0" type="checkbox" value="0"><span class="copy">元気なうちに、直接ありがとうを伝えたい</span></label>
+<label class="choice"><input id="feel-1" type="checkbox" value="1"><span class="copy">事業を引き継ぐ前に、仲間や取引先に挨拶したい</span></label>
+<label class="choice"><input id="feel-2" type="checkbox" value="2"><span class="copy">家族に、これまでの話をゆっくり聞いてほしい</span></label>
+<label class="choice"><input id="feel-3" type="checkbox" value="3"><span class="copy">しばらく会えていない人たちに会いたい</span></label>
+<label class="choice"><input id="feel-4" type="checkbox" value="4"><span class="copy">人生の節目を、みんなと祝いたい</span></label>
+</div>
+<button class="primary next" id="q2-next" disabled>次へ</button>
+<button class="back">ひとつ前に戻る</button>
+</section>
+
+<section class="question" id="q3" aria-labelledby="q3-title" hidden>
+<p class="eyebrow" data-topic="思いを伝える相手"></p>
+<h2 id="q3-title" tabindex="-1">誰に、思いを<br>伝えたいですか？</h2>
+<p class="hint" id="q3-hint">いくつでも選べます。選んだら「次へ」。</p>
+<div class="choices" role="group" aria-labelledby="q3-title" aria-describedby="q3-hint">
+<label class="choice"><input id="guest-0" type="checkbox" value="0"><span class="copy">家族・親族</span></label>
+<label class="choice"><input id="guest-1" type="checkbox" value="1"><span class="copy">友人・昔の仲間</span></label>
+<label class="choice"><input id="guest-2" type="checkbox" value="2"><span class="copy">仕事の仲間・取引先</span></label>
+<label class="choice"><input id="guest-3" type="checkbox" value="3"><span class="copy">地域・趣味の仲間</span></label>
+</div>
+<button class="primary next" id="q3-next" disabled>次へ</button>
+<button class="back">ひとつ前に戻る</button>
+</section>
+
+<section class="question" id="q4" aria-labelledby="q4-title" hidden>
+<p class="eyebrow" data-topic="ご本人のお気持ち"></p>
+<h2 id="q4-title" tabindex="-1">ご本人は<br>この会のことを？</h2>
+<p class="hint" id="q4-hint">今のお気持ちに近いものをお選びください。</p>
+<div class="choices" role="group" aria-labelledby="q4-title" aria-describedby="q4-hint">
+<button class="choice" data-value="positive" aria-pressed="false"><span class="copy">すでに話していて前向き</span></button>
+<button class="choice" data-value="discuss" aria-pressed="false"><span class="copy">これから相談したい</span></button>
+<button class="choice" data-value="private" aria-pressed="false"><span class="copy">内緒で準備したい</span></button>
+</div>
+<button class="back">ひとつ前に戻る</button>
+</section>
+
+<section class="question" id="q5" aria-labelledby="q5-title" hidden>
+<p class="eyebrow" data-topic="規模・人数"></p>
+<h2 id="q5-title" tabindex="-1">何人くらい<br>呼びたいですか？</h2>
+<p class="hint" id="q5-hint">今のイメージでお選びください。</p>
+<div class="choices" role="group" aria-labelledby="q5-title" aria-describedby="q5-hint">
+<button class="choice" data-value="0" aria-pressed="false"><span class="copy">20名くらいまで</span></button>
+<button class="choice" data-value="1" aria-pressed="false"><span class="copy">50名前後</span></button>
+<button class="choice" data-value="2" aria-pressed="false"><span class="copy">100名くらい以上</span></button>
+<button class="choice" data-value="3" aria-pressed="false"><span class="copy">まだわからない</span></button>
+</div>
+<button class="back">ひとつ前に戻る</button>
+</section>
+
+<section class="question" id="q6" aria-labelledby="q6-title" hidden>
+<p class="eyebrow" data-topic="雰囲気"></p>
+<h2 id="q6-title" tabindex="-1">どんな雰囲気に<br>したいですか？</h2>
+<p class="hint" id="q6-hint">思い浮かぶ過ごし方をひとつ。</p>
+<div class="choices" role="group" aria-labelledby="q6-title" aria-describedby="q6-hint">
+<button class="choice" data-value="0" aria-pressed="false"><span class="copy">しっとり<span class="sub">ゆっくり語らい、思い出をたどる。</span></span></button>
+<button class="choice" data-value="1" aria-pressed="false"><span class="copy">わいわい<span class="sub">にぎやかに、みんなで楽しむ。</span></span></button>
+<button class="choice" data-value="2" aria-pressed="false"><span class="copy">両方<span class="sub">前半はしっとり、後半はわいわい。</span></span></button>
+</div>
+<button class="back">ひとつ前に戻る</button>
+</section>
+
+<section class="question" id="q7" aria-labelledby="q7-title" hidden>
+<p class="eyebrow" data-topic="特別なこと"></p>
+<h2 id="q7-title" tabindex="-1">当日やってみたい<br>特別なことはありますか？</h2>
+<p class="hint" id="q7-hint">いくつでも選べます。「特になし」は、ほかの項目と一緒には選べません。</p>
+<div class="choices" role="group" aria-labelledby="q7-title" aria-describedby="q7-hint">
+<label class="choice"><input id="extra-0" type="checkbox" value="0"><span class="copy">楽器演奏<span class="sub">ご本人または仲間の演奏の時間。音響を用意（仮：10万〜20万円 ※別途見積）</span></span></label>
+<label class="choice"><input id="extra-1" type="checkbox" value="1"><span class="copy">ダンス<span class="sub">ダンスの披露・みんなで踊る時間（仮：10万〜20万円 ※別途見積）</span></span></label>
+<label class="choice"><input id="extra-2" type="checkbox" value="2"><span class="copy">ヘアメイク・メイク<span class="sub">当日のプロのヘアメイク（仮：5万円）</span></span></label>
+<label class="choice"><input id="extra-3" type="checkbox" value="3"><span class="copy">納棺体験<span class="sub">納棺体験の時間（仮：5万円）</span></span></label>
+<label class="choice"><input id="extra-4" type="checkbox" value="4"><span class="copy">思い出の映像上映<span class="sub">生い立ちや歩みをまとめた映像の上映（仮：5万〜15万円）</span></span></label>
+<label class="choice"><input id="extra-5" type="checkbox" value="5"><span class="copy">記録撮影<span class="sub">当日の写真・映像を記録してお渡し（仮：5万〜7万円）</span></span></label>
+<div class="choice" style="display:block; padding:16px 18px;">
+  <label style="display:flex; align-items:center; gap:14px; cursor:pointer;"><input id="extra-6" type="checkbox" value="6"><span class="copy">その他<span class="sub">自由に入力いただけます（別途ご相談）</span></span></label>
+  <div id="extra-other-wrap" class="other-input-wrap" hidden>
+    <label for="extra-other-input">やってみたいことをご自由にご入力ください</label>
+    <input type="text" id="extra-other-input" class="other-text-input" placeholder="例：昔の料理をふるまいたい、など">
+  </div>
+</div>
+<label class="choice"><input id="extra-7" type="checkbox" value="7"><span class="copy">特になし</span></label>
+</div>
+<button class="primary next" id="q7-next" disabled>次へ</button>
+<button class="back">ひとつ前に戻る</button>
+</section>
+
+<section class="question" id="q8" aria-labelledby="q8-title" hidden>
+<p class="eyebrow" data-topic="感謝の言葉"></p>
+<h2 id="q8-title" tabindex="-1">「感謝の言葉」を<br>誰に読んでほしいですか？</h2>
+<p class="hint" id="q8-hint">今のお気持ちに近いものをひとつ。</p>
+<div class="choices" role="group" aria-labelledby="q8-title" aria-describedby="q8-hint">
+<button class="choice" data-value="family" aria-pressed="false"><span class="copy">ご家族・ご親族のどなたか</span></button>
+<button class="choice" data-value="friend" aria-pressed="false"><span class="copy">ご友人</span></button>
+<button class="choice" data-value="work" aria-pressed="false"><span class="copy">仕事の仲間</span></button>
+<button class="choice" data-value="none" aria-pressed="false"><span class="copy">読んでほしくない</span></button>
+<button class="choice" data-value="undecided" aria-pressed="false"><span class="copy">まだ決めていない</span></button>
+</div>
+<button class="back">ひとつ前に戻る</button>
+</section>
+
+<section class="result" id="result" aria-labelledby="result-title" hidden>
+<p class="thanks">ご回答ありがとうございました</p>
+<h2 id="result-title" tabindex="-1">あなたへのご提案</h2>
+
+<div class="feeling-quote" id="feeling-quote" hidden>
+<strong>あなたの想い</strong>
+<p id="feeling-text"></p>
+</div>
+
+<div class="proposal">
+<p class="eyebrow" id="proposal-label">ご提案の会のかたち</p>
+<h3 id="plan-name"></h3>
+<p id="plan-description"></p>
+</div>
+
+<div class="two-parts" id="two-parts" hidden>
+<section class="part"><h3>第一部 · しっとり</h3><p id="part-one"></p></section>
+<section class="part"><h3>第二部 · わいわい</h3><p id="part-two"></p></section>
+</div>
+
+<section class="result-section venue-box" id="venue-section" aria-labelledby="venue-title">
+<h3 id="venue-title">おすすめの会場の種類</h3>
+<p class="venue-type" id="venue-name"></p>
+<p class="venue-badge" id="venue-stage-badge" hidden>ステージ・音響設備のある会場を優先</p>
+<p class="note" id="venue-stage-note" hidden>※楽器演奏・ダンスのご希望に合わせて、ステージや音響設備のある会場を中心にご提案します。</p>
+<p class="note" id="venue-size-note" hidden>※人数が決まっていないため、50名前後を想定した会場の目安です。</p>
+</section>
+
+<section class="result-section" id="program" aria-labelledby="program-title">
+<h3 id="program-title">あなたの会のプログラム</h3>
+<ul class="program-list" id="relation-list"></ul>
+<section class="result-section" id="special" aria-labelledby="special-title">
+<h3 id="special-title">当日の特別な時間</h3>
+<p class="note">オプション（金額はすべて仮）</p>
+<ul class="special-list" id="special-list"></ul>
+<p class="special-joint-note" id="special-joint-note" hidden>※ステージ・音響は共通で使えるため、実際の費用はお見積りで調整します。</p>
+</section>
+<section class="result-section" aria-labelledby="words-title">
+<h3 id="words-title">感謝の言葉</h3>
+<p class="words-copy" id="words-copy"></p>
+</section>
+</section>
+
+<section class="result-section" id="discussion" aria-labelledby="discussion-title" hidden>
+<h3 id="discussion-title">面談でお話しすること</h3>
+<p class="note">お選びいただいた想いやイメージから、一緒に考えていきましょう。</p>
+<dl class="discussion-list">
+<dt>大切にしたい想い</dt><dd id="discuss-feeling"></dd>
+<dt>思いを伝えたい方</dt><dd id="discuss-guests"></dd>
+</dl>
+</section>
+
+<section class="result-section price-box" id="pricing" aria-labelledby="pricing-title">
+<h3 id="pricing-title">費用の目安（仮）</h3>
+<div class="price-details">
+<div class="price-item">
+<span class="price-item-title">基本料金（会場・規模による）</span>
+<span class="price-item-val" id="price-base-val"></span>
+</div>
+<p class="note" id="price-base-note" hidden style="margin:2px 0 8px; font-size:15px;"></p>
+<div class="price-item">
+<span class="price-item-title">オプション（選んだもの）</span>
+<span class="price-item-val" id="price-opt-val"></span>
+</div>
+<ul class="price-subitems" id="price-opt-subitems"></ul>
+<p class="note" id="price-opt-note" hidden style="margin:2px 0 8px; font-size:15px;"></p>
+</div>
+<div class="price-total-block">
+<span class="price-total-label">合計の目安</span>
+<span class="price-total-val" id="price-total-val"></span>
+</div>
+<p class="note">※開催場所・規模・内容によって大きく変わります。正式なお見積りは面談でご案内します。</p>
+<p class="fee-note" id="fee-note">参加者の皆さまから会費をいただく形にすると、ご本人のご負担を抑えられます（仮）</p>
+<p class="family-note" id="family-note">ご家族で費用を分け合うこともできます。</p>
+</section>
+
+<section class="result-section" aria-labelledby="support-title">
+<h3 id="support-title">COMETがお手伝いすること</h3>
+<ul class="support-list">
+<li>企画</li>
+<li>会場探し・手配</li>
+<li>お食事</li>
+<li>ご招待</li>
+<li>演出</li>
+<li>当日の進行</li>
+</ul>
+</section>
+
+<section class="result-section contact" id="contact" aria-labelledby="contact-title">
+<h3 id="contact-title">思い描いた一日を、<br>一緒にかたちにしませんか。</h3>
+<button id="consult" class="primary">この内容で相談する（フォーム）</button>
+<p class="note">回答内容はフォームに引き継がれます。</p>
+</section>
+
+<button class="back" id="result-back">ひとつ前に戻る</button>
+<button class="restart" id="restart">回答をやり直す</button>
+</section>
+</div>
+
+<!-- フォーム画面 -->
+<section class="form-view" id="form-view" aria-labelledby="form-view-title" hidden>
+<h2 id="form-view-title" tabindex="-1">お問い合わせ・ご相談</h2>
+<p style="margin-top:14px;">シミュレーション結果をもとに、専任のプランナーがご相談を承ります。</p>
+
+<div class="form-summary-card" id="form-summary-card">
+<h3 style="font-size:19px;">シミュレーションの回答内容</h3>
+<p class="note" style="margin-top:4px;">この内容も一緒にお送りします</p>
+<dl class="summary-dl" id="summary-dl"></dl>
+</div>
+
+<form class="form-fields" id="inquiry-form" novalidate>
+<div class="form-group">
+<label class="form-label" for="form-name">お名前 <span class="badge-req">必須</span></label>
+<input type="text" id="form-name" class="form-control" placeholder="例：山田 太郎" autocomplete="name" required>
+</div>
+
+<div class="form-group">
+<label class="form-label" for="form-email">メールアドレス <span class="badge-req">必須</span></label>
+<input type="email" id="form-email" class="form-control" placeholder="例：yamada@example.com" autocomplete="email" required>
+</div>
+
+<div class="form-group">
+<label class="form-label" for="form-phone">電話番号 <span class="badge-opt">任意</span></label>
+<input type="tel" id="form-phone" class="form-control" placeholder="例：090-1234-5678" autocomplete="tel">
+</div>
+
+<div class="form-group">
+<label class="form-label" for="form-message">ご相談内容 <span class="badge-opt">任意</span></label>
+<textarea id="form-message" class="form-control" placeholder="ご希望の開催時期や場所、その他気になることがあればご自由にご記入ください。"></textarea>
+</div>
+
+<div id="form-error" class="error-box" role="alert" hidden></div>
+
+<div style="margin-top:28px;">
+<button type="submit" id="form-submit" class="primary">送信する</button>
+<p class="note" style="text-align:center; margin-top:10px;">※送信前の回答内容は保存されません。</p>
+<button type="button" class="back" id="form-back" style="margin-top:16px;">← 結果に戻る</button>
+</div>
+</form>
+</section>
+
+<!-- 送信後画面 -->
+<section class="thanks-view" id="thanks-view" aria-labelledby="thanks-view-title" hidden>
+<h2 id="thanks-view-title" tabindex="-1">お問い合わせありがとうございました</h2>
+<p style="margin-top:20px;">ご入力のメールアドレスに、面談の日程を選んでいただくためのご案内をお送りしました。メール内のリンクから、ご都合の良い日時をお選びください。</p>
+<p class="note" style="margin-top:12px;">数日たってもメールが届かない場合は、こちらからご連絡いたします。</p>
+
+<div class="mail-sample">
+<h3>（参考）自動返信メールの文面</h3>
+<div class="mail-body" id="mail-preview"></div>
+</div>
+
+<div style="margin-top:32px;">
+<button type="button" class="primary" id="thanks-restart">シミュレーションの最初に戻る</button>
+</div>
+</section>
+
+<noscript><p>この質問に答えるには、ブラウザーのJavaScriptを有効にしてください。</p></noscript>
+<footer class="footer">株式会社COMET</footer>
+</main>
+
+<script>
+(()=>{
+'use strict';
+
+const PLANS = {
+  "K1": {"name": "食卓を囲んで語らう会（仮）", "description": "ご自宅・行きつけのお店で、一人ひとりと言葉を交わす。思い出の写真を囲む"},
+  "K2": {"name": "思い出をたどる感謝の会（仮）", "description": "レストランや貸切会場。映像や写真で歩みをたどり、ゆっくり感謝を伝える"},
+  "K3": {"name": "節目の感謝の式（仮）", "description": "ホテル宴会場など。挨拶・映像・言葉を贈る時間を軸にした式の形"},
+  "K4": {"name": "気心の知れた仲間との食事会（仮）", "description": "行きつけのお店などで、乾杯から始まる気楽な会"},
+  "K5": {"name": "みんなで祝うパーティー（仮）", "description": "貸切会場で、余興や歓談を中心ににぎやかに"},
+  "K6": {"name": "大人数で盛り上がる感謝のパーティー（仮）", "description": "ホテル宴会場など。ステージ・演出を使った大きなパーティー"},
+  "K7": {"name": "語らいと乾杯の二部の会（仮）", "description": "前半はしっとり、後半はわいわい。規模に応じて会場・演出を調整"},
+  "K0": {"name": "まずは一緒に考えましょう", "description": "規模が未定、またはご本人とこれから相談する場合。面談で一緒に整理"}
+};
+
+const MATRIX = [
+  ["K1", "K4", "K7"],
+  ["K2", "K5", "K7"],
+  ["K3", "K6", "K7"]
+];
+
+const FEELINGS = [
+  "元気なうちに、直接ありがとうを伝えたい",
+  "事業を引き継ぐ前に、仲間や取引先に挨拶したい",
+  "家族に、これまでの話をゆっくり聞いてほしい",
+  "しばらく会えていない人たちに会いたい",
+  "人生の節目を、みんなと祝いたい"
+];
+
+const RELATIONS = [
+  { name: "家族・親族", program: "ご家族の紹介と家族写真の時間" },
+  { name: "友人・昔の仲間", program: "思い出話の時間と昔の写真のスライド" },
+  { name: "仕事の仲間・取引先", program: "これまでの感謝と「これからを託す」挨拶の時間" },
+  { name: "地域・趣味の仲間", program: "趣味の発表や仲間からの一言" }
+];
+
+const EXTRAS = [
+  { id: 0, name: "楽器演奏", desc: "ご本人または仲間の演奏の時間。音響を用意", min: 10, max: 20, note: "※詳細は別途お見積り" },
+  { id: 1, name: "ダンス", desc: "ダンスの披露・みんなで踊る時間", min: 10, max: 20, note: "※詳細は別途お見積り" },
+  { id: 2, name: "ヘアメイク・メイク", desc: "当日のプロのヘアメイク", min: 5, max: 5 },
+  { id: 3, name: "納棺体験", desc: "納棺体験の時間", min: 5, max: 5 },
+  { id: 4, name: "思い出の映像上映", desc: "生い立ちや歩みをまとめた映像の上映", min: 5, max: 15 },
+  { id: 5, name: "記録撮影", desc: "当日の写真・映像を記録してお渡し", min: 5, max: 7 },
+  { id: 6, name: "その他", desc: "自由入力", isOther: true },
+  { id: 7, name: "特になし", isNone: true }
+];
+
+const VENUE_TABLE = {
+  normal: [
+    ["ご自宅・行きつけのお店・料亭", "行きつけのお店・レストラン", "二部で使い分けられるお店"],
+    ["レストランの貸切", "貸切のパーティー会場", "二部構成に対応できる貸切会場"],
+    ["ホテルの宴会場", "ステージのある宴会場", "式とパーティーを続けて行える宴会場"],
+    ["レストランの貸切", "貸切のパーティー会場", "二部構成に対応できる貸切会場"]
+  ],
+  stage: [
+    ["ステージ・音響設備のある個室やサロン（料亭の大広間など）", "ステージ・音響設備のあるレストラン・ライブカフェ", "ステージ・音響設備があり、二部で使い分けられる会場"],
+    ["ステージ・音響設備のあるレストラン・小ホール", "ステージ・音響設備のある貸切パーティー会場", "ステージ・音響設備があり、二部構成に対応できる貸切会場"],
+    ["ステージ・音響設備のあるホテル宴会場", "ステージ・音響設備のある宴会場・イベントホール", "ステージ・音響設備があり、式とパーティーを続けて行える宴会場"],
+    ["ステージ・音響設備のあるレストラン・小ホール", "ステージ・音響設備のある貸切パーティー会場", "ステージ・音響設備があり、二部構成に対応できる貸切会場"]
+  ]
+};
+
+const BASE_PRICES = [
+  { min: 20, max: 20, desc: "20名 × 約1万円 ＝ 約20万円（仮）" },
+  { min: 75, max: 75, desc: "50名 × 約1.5万円 ＝ 約75万円（仮）" },
+  { min: 200, max: 200, desc: "100名 × 約2万円 ＝ 約200万円（仮）" },
+  { min: 75, max: 75, desc: "50名 × 約1.5万円 ＝ 約75万円（仮）", note: "人数が決まっていないため、50名で仮に計算しています" }
+];
+
+const $ = id => document.getElementById(id);
+const allQuestions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'];
+let answers = {};
+let resultFrom = 'q8';
+const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+
+const route = () => answers.q1 === 'family' ? allQuestions : allQuestions.filter(id => id !== 'q4');
+
+function progress(id, result = false, formMode = '') {
+  const ids = route();
+  const count = ids.indexOf(id) + 1;
+  const isFamily = answers.q1 === 'family';
+  const total = ids.length;
+
+  if (formMode === 'form') {
+    $('progress').textContent = 'お問い合わせフォーム';
+  } else if (formMode === 'thanks') {
+    $('progress').textContent = '送信完了';
+  } else if (result) {
+    $('progress').textContent = (id === 'q4') ? 'ご相談へ' : 'ご提案 · 回答完了';
+  } else {
+    $('progress').textContent = `質問 ${count}/${total}`;
+  }
+
+  $('intro-qcount').textContent = isFamily ? '8つの質問' : (answers.q1 === 'self' ? '7つの質問' : '最大8つの質問');
+
+  ids.forEach(q => {
+    const el = $(q);
+    if (!el) return;
+    const n = ids.indexOf(q) + 1;
+    const eyebrow = el.querySelector('.eyebrow');
+    if (eyebrow) {
+      eyebrow.textContent = `質問 ${n}/${total} · ` + (eyebrow.dataset.topic || '');
+    }
+  });
+
+  const dotsContainer = $('progress').nextElementSibling;
+  dotsContainer.replaceChildren(...ids.map((q, i) => {
+    const dot = document.createElement('i');
+    const on = result || formMode ? true : (i < count);
+    dot.className = 'dot' + (on ? ' on' : '');
+    return dot;
+  }));
+}
+
+function move(id) {
+  const title = $(id + '-title') || $(id);
+  if (title) title.focus({ preventScroll: true });
+  const target = $(id);
+  if (target) {
+    target.scrollIntoView({ behavior: reduced.matches ? 'instant' : 'smooth', block: 'start' });
+  }
+}
+
+function hideAfter(id) {
+  const ids = route();
+  const at = ids.indexOf(id);
+  allQuestions.forEach(q => {
+    if (!ids.includes(q) || ids.indexOf(q) > at) {
+      $(q).hidden = true;
+    }
+  });
+  $('result').hidden = true;
+  $('form-view').hidden = true;
+  $('thanks-view').hidden = true;
+  $('survey-view').hidden = false;
+}
+
+function show(id) {
+  hideAfter(id);
+  $(id).hidden = false;
+  progress(id);
+  move(id);
+}
+
+function clearQuestion(id) {
+  delete answers[id];
+  if (id === 'q7') {
+    delete answers.q7_other;
+    const wrap = $('extra-other-wrap');
+    if (wrap) wrap.hidden = true;
+    const input = $('extra-other-input');
+    if (input) input.value = '';
+  }
+  const el = $(id);
+  if (!el) return;
+  el.querySelectorAll('[aria-pressed]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+  el.querySelectorAll('input[type=checkbox], input[type=radio]').forEach(i => i.checked = false);
+  const nextBtn = $(id + '-next');
+  if (nextBtn) nextBtn.disabled = true;
+}
+
+function next(id) {
+  if (id === 'q4' && answers[id] !== 'positive') {
+    propose(id);
+    return;
+  }
+  const ids = route();
+  const after = ids[ids.indexOf(id) + 1];
+  if (after) {
+    show(after);
+  } else {
+    propose(id);
+  }
+}
+
+// Q1 単一選択
+$('q1').querySelectorAll('button[data-value]').forEach(button => {
+  button.addEventListener('click', () => {
+    if (answers.q1 !== button.dataset.value) {
+      allQuestions.filter(q => q !== 'q1').forEach(clearQuestion);
+    }
+    answers.q1 = button.dataset.value;
+    $('q1').querySelectorAll('[data-value]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    hideAfter('q1');
+    next('q1');
+  });
+});
+$('q1').querySelector('.back').addEventListener('click', () => {
+  hideAfter('q1');
+  progress('q1');
+  move('intro');
+});
+
+// Q2 複数選択
+$('q2').querySelectorAll('input[type=checkbox]').forEach(input => {
+  input.addEventListener('change', () => {
+    answers.q2 = [...$('q2').querySelectorAll('input:checked')].map(e => Number(e.value));
+    $('q2-next').disabled = !answers.q2.length;
+    hideAfter('q2');
+    progress('q2');
+  });
+});
+$('q2-next').addEventListener('click', () => {
+  if (answers.q2?.length) next('q2');
+});
+$('q2').querySelector('.back').addEventListener('click', () => show('q1'));
+
+// Q3 複数選択
+$('q3').querySelectorAll('input[type=checkbox]').forEach(input => {
+  input.addEventListener('change', () => {
+    answers.q3 = [...$('q3').querySelectorAll('input:checked')].map(e => Number(e.value));
+    $('q3-next').disabled = !answers.q3.length;
+    hideAfter('q3');
+    progress('q3');
+  });
+});
+$('q3-next').addEventListener('click', () => {
+  if (answers.q3?.length) next('q3');
+});
+$('q3').querySelector('.back').addEventListener('click', () => show('q2'));
+
+// Q4 単一選択 (ご家族のみ)
+$('q4').querySelectorAll('button[data-value]').forEach(button => {
+  button.addEventListener('click', () => {
+    answers.q4 = button.dataset.value;
+    $('q4').querySelectorAll('[data-value]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    hideAfter('q4');
+    next('q4');
+  });
+});
+$('q4').querySelector('.back').addEventListener('click', () => show('q3'));
+
+// Q5 単一選択
+$('q5').querySelectorAll('button[data-value]').forEach(button => {
+  button.addEventListener('click', () => {
+    answers.q5 = button.dataset.value;
+    $('q5').querySelectorAll('[data-value]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    hideAfter('q5');
+    next('q5');
+  });
+});
+$('q5').querySelector('.back').addEventListener('click', () => {
+  const ids = route();
+  show(ids[ids.indexOf('q5') - 1]);
+});
+
+// Q6 単一選択
+$('q6').querySelectorAll('button[data-value]').forEach(button => {
+  button.addEventListener('click', () => {
+    answers.q6 = button.dataset.value;
+    $('q6').querySelectorAll('[data-value]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    hideAfter('q6');
+    next('q6');
+  });
+});
+$('q6').querySelector('.back').addEventListener('click', () => show('q5'));
+
+// Q7 複数選択 + その他入力
+$('q7').querySelectorAll('input[type=checkbox]').forEach(input => {
+  input.addEventListener('change', () => {
+    if (input.id === 'extra-7' && input.checked) {
+      $('q7').querySelectorAll('input:not(#extra-7)').forEach(e => e.checked = false);
+      $('extra-other-wrap').hidden = true;
+      $('extra-other-input').value = '';
+      delete answers.q7_other;
+    } else if (input.checked) {
+      $('extra-7').checked = false;
+      if (input.id === 'extra-6') {
+        $('extra-other-wrap').hidden = false;
+        $('extra-other-input').focus();
+      }
+    } else {
+      if (input.id === 'extra-6') {
+        $('extra-other-wrap').hidden = true;
+        $('extra-other-input').value = '';
+        delete answers.q7_other;
+      }
+    }
+    answers.q7 = [...$('q7').querySelectorAll('input[type=checkbox]:checked')].map(e => Number(e.value));
+    $('q7-next').disabled = !answers.q7.length;
+    hideAfter('q7');
+    progress('q7');
+  });
+});
+$('extra-other-input').addEventListener('input', e => {
+  answers.q7_other = e.target.value.trim();
+});
+$('q7-next').addEventListener('click', () => {
+  if (answers.q7?.length) next('q7');
+});
+$('q7').querySelector('.back').addEventListener('click', () => show('q6'));
+
+// Q8 単一選択
+$('q8').querySelectorAll('button[data-value]').forEach(button => {
+  button.addEventListener('click', () => {
+    answers.q8 = button.dataset.value;
+    $('q8').querySelectorAll('[data-value]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    hideAfter('q8');
+    next('q8');
+  });
+});
+$('q8').querySelector('.back').addEventListener('click', () => show('q7'));
+
+function readerCopy() {
+  return {
+    family: 'ご家族・ご親族のどなたかからの「感謝の言葉」の時間。原稿づくりもお手伝いします。',
+    friend: 'ご友人からの「感謝の言葉」の時間を設けます。',
+    work: '仕事の仲間からの「感謝の言葉」の時間を設けます。',
+    none: '言葉を贈る時間は設けず、ご本人からの感謝のご挨拶を中心にします。',
+    undecided: '「感謝の言葉」をどなたにお願いするか、面談で一緒に決めましょう。'
+  }[answers.q8] || '';
+}
+
+function fillList(id, items) {
+  $(id).replaceChildren(...items.map(text => {
+    const li = document.createElement('li');
+    li.textContent = text;
+    return li;
+  }));
+}
+
+function getCalculation() {
+  const sizeIdx = Number(answers.q5);
+  const base = BASE_PRICES[sizeIdx] || BASE_PRICES[1];
+
+  let optMin = 0;
+  let optMax = 0;
+  const selectedExtras = (answers.q7 || []).filter(i => i !== 7);
+  const hasMusic = selectedExtras.includes(0);
+  const hasDance = selectedExtras.includes(1);
+  const hasOther = selectedExtras.includes(6);
+
+  const optionItems = [];
+  selectedExtras.forEach(i => {
+    const item = EXTRAS[i];
+    if (item.isOther) {
+      const text = answers.q7_other ? `その他（${answers.q7_other}）` : 'その他（自由入力）';
+      optionItems.push({ name: text, priceStr: '別途ご相談（合計に含めず）' });
+    } else {
+      optMin += item.min;
+      optMax += item.max;
+      const pStr = (item.min === item.max) ? `${item.min}万円（仮）` : `${item.min}万〜${item.max}万円（仮）`;
+      optionItems.push({ name: item.name, priceStr: pStr });
+    }
+  });
+
+  const totalMin = base.min + optMin;
+  const totalMax = base.max + optMax;
+  const totalStr = (totalMin === totalMax) ? `約${totalMin}万円（仮）` : `${totalMin}万〜${totalMax}万円（仮）`;
+
+  let optSubtotalStr = '';
+  if (optionItems.length === 0) {
+    optSubtotalStr = '0円';
+  } else if (optMin === 0 && optMax === 0 && hasOther) {
+    optSubtotalStr = '別途ご相談';
+  } else if (optMin === optMax) {
+    optSubtotalStr = `約${optMin}万円（仮）`;
+  } else {
+    optSubtotalStr = `${optMin}万〜${optMax}万円（仮）`;
+  }
+
+  return {
+    base,
+    optionItems,
+    optMin,
+    optMax,
+    optSubtotalStr,
+    totalMin,
+    totalMax,
+    totalStr,
+    hasMusicAndDance: hasMusic && hasDance,
+    hasStageNeeds: hasMusic || hasDance,
+    hasOther
+  };
+}
+
+function propose(from) {
+  const early = (from === 'q4');
+  if (!early && route().some(id => answers[id] === undefined || (Array.isArray(answers[id]) && !answers[id].length))) {
+    return;
+  }
+  resultFrom = from;
+
+  // 質問2の想いを反映
+  const selectedFeelings = (answers.q2 || []).map(i => FEELINGS[i]);
+  if (selectedFeelings.length) {
+    $('feeling-quote').hidden = false;
+    const quoteText = selectedFeelings.map(t => `「${t}」`).join('') + '——そのお気持ちを形にする会をご提案します。';
+    $('feeling-text').textContent = quoteText;
+  } else {
+    $('feeling-quote').hidden = true;
+  }
+
+  if (early) {
+    // 早期終了（面談の案内）
+    $('result').dataset.plan = 'K0';
+    $('proposal-label').textContent = 'まずはご相談から';
+    $('plan-name').textContent = PLANS.K0.name;
+    const desc = answers.q4 === 'discuss'
+      ? 'ご本人と一緒に参加できる面談をご案内します。この会へのお気持ちを、一緒に確かめるところから始めましょう。'
+      : 'ご本人のお気持ちを大切にしたいので、まずはご家族だけでご相談ください。ご本人の意向を一緒に確かめるところから始めましょう。';
+    $('plan-description').textContent = desc;
+
+    $('two-parts').hidden = true;
+    $('venue-section').hidden = true;
+    $('program').hidden = true;
+    $('pricing').hidden = true;
+    $('discussion').hidden = false;
+
+    $('discuss-feeling').textContent = selectedFeelings.length ? selectedFeelings.join('、') : '未選択';
+    $('discuss-guests').textContent = (answers.q3 || []).map(i => RELATIONS[i].name).join('、') || '未選択';
+
+    $('contact-title').innerHTML = 'ご本人のお気持ちから、<br>一緒に考えましょう。';
+  } else {
+    // 通常提案
+    const size = Number(answers.q5); // 0, 1, 2, 3
+    const mood = Number(answers.q6); // 0, 1, 2
+    // 人数がまだわからない(3)の場合は50名前後(1)としてプランを決定
+    const matrixSize = (size === 3) ? 1 : size;
+    const code = MATRIX[matrixSize][mood];
+    $('result').dataset.plan = code;
+
+    $('proposal-label').textContent = 'ご提案の会のかたち';
+    $('plan-name').textContent = PLANS[code].name;
+    let description = PLANS[code].description;
+    if (code === 'K3' && answers.q8 === 'none') {
+      description = 'ホテル宴会場など。ご本人からの感謝の挨拶や映像を軸にした式の形。';
+    }
+    if (size === 3) {
+      description += '（※人数が決まっていないため、50名規模を仮定したプランです）';
+    }
+    $('plan-description').textContent = description;
+
+    // 二部構成
+    $('two-parts').hidden = (code !== 'K7');
+    if (code === 'K7') {
+      $('part-one').textContent = ['一人ひとりと、しっとり語らう時間。', '思い出をたどり、ゆっくり感謝を伝える時間。', '挨拶や映像を軸にした、しっとりとした式。'][matrixSize];
+      $('part-two').textContent = ['乾杯から始まる、気楽なひととき。', '乾杯して、皆さまで楽しむパーティー。', 'ステージや演出を使い、にぎやかに楽しむパーティー。'][matrixSize];
+    }
+
+    // 計算
+    const calc = getCalculation();
+
+    // おすすめの会場
+    $('venue-section').hidden = false;
+    const venueList = calc.hasStageNeeds ? VENUE_TABLE.stage : VENUE_TABLE.normal;
+    $('venue-name').textContent = venueList[size][mood];
+    $('venue-stage-badge').hidden = !calc.hasStageNeeds;
+    $('venue-stage-note').hidden = !calc.hasStageNeeds;
+    $('venue-size-note').hidden = (size !== 3);
+
+    // プログラム
+    $('program').hidden = false;
+    $('discussion').hidden = true;
+    fillList('relation-list', (answers.q3 || []).map(i => RELATIONS[i].program));
+
+    // 特別な時間
+    const selectedExtras = (answers.q7 || []).filter(i => i !== 7);
+    $('special').hidden = !selectedExtras.length;
+    $('special-list').replaceChildren(...selectedExtras.map(i => {
+      const item = EXTRAS[i];
+      const li = document.createElement('li');
+      const title = document.createElement('strong');
+      title.textContent = item.isOther && answers.q7_other ? `その他（${answers.q7_other}）` : item.name;
+
+      const meta = document.createElement('div');
+      meta.className = 'special-meta';
+      const tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.textContent = 'オプション';
+      const priceTag = document.createElement('span');
+      priceTag.className = 'price-tag';
+
+      if (item.isOther) {
+        priceTag.textContent = '費用：別途ご相談';
+      } else {
+        const pStr = (item.min === item.max) ? `${item.min}万円（仮）` : `${item.min}万〜${item.max}万円（仮）`;
+        priceTag.textContent = `費用（仮）：${pStr}${item.note ? ' ' + item.note : ''}`;
+      }
+      meta.append(tag, priceTag);
+
+      const p = document.createElement('p');
+      p.textContent = item.isOther ? 'ご希望の内容に合わせて面談にてご提案いたします。' : item.desc;
+
+      li.append(title, meta, p);
+      return li;
+    }));
+    $('special-joint-note').hidden = !calc.hasMusicAndDance;
+
+    // 感謝の言葉
+    $('words-copy').textContent = readerCopy();
+
+    // 費用の目安
+    $('pricing').hidden = false;
+    $('price-base-val').textContent = calc.base.desc;
+    if (calc.base.note) {
+      $('price-base-note').textContent = `※${calc.base.note}`;
+      $('price-base-note').hidden = false;
+    } else {
+      $('price-base-note').hidden = true;
+    }
+
+    $('price-opt-val').textContent = calc.optSubtotalStr;
+    $('price-opt-subitems').replaceChildren(...calc.optionItems.map(it => {
+      const li = document.createElement('li');
+      const spanName = document.createElement('span');
+      spanName.className = 'sub-name';
+      spanName.textContent = `・${it.name}`;
+      const spanVal = document.createElement('span');
+      spanVal.textContent = it.priceStr;
+      li.append(spanName, spanVal);
+      return li;
+    }));
+
+    if (calc.hasMusicAndDance) {
+      $('price-opt-note').textContent = '※ステージ・音響は共通で使えるため、実際の費用はお見積りで調整します';
+      $('price-opt-note').hidden = false;
+    } else {
+      $('price-opt-note').hidden = true;
+    }
+
+    $('price-total-val').textContent = calc.totalStr;
+
+    $('fee-note').hidden = (size === 0);
+    $('family-note').hidden = (answers.q1 !== 'family');
+
+    $('contact-title').innerHTML = '思い描いた一日を、<br>一緒にかたちにしませんか。';
+  }
+
+  $('result').hidden = false;
+  progress(from, true);
+  move('result');
+}
+
+// フォーム画面の描画
+function renderFormSummary() {
+  const early = (resultFrom === 'q4');
+  const items = [];
+
+  items.push(['どなたのための会', answers.q1 === 'family' ? 'ご家族のため' : 'ご自身のため']);
+
+  const feelings = (answers.q2 || []).map(i => FEELINGS[i]);
+  if (feelings.length) {
+    items.push(['大切にしたい想い', feelings.join('、')]);
+  }
+
+  const guests = (answers.q3 || []).map(i => RELATIONS[i].name);
+  if (guests.length) {
+    items.push(['思いを伝えたい相手', guests.join('、')]);
+  }
+
+  if (answers.q1 === 'family') {
+    const consentMap = { positive: 'すでに話していて前向き', discuss: 'これから相談したい', private: '内緒で準備したい' };
+    items.push(['ご本人の意向', consentMap[answers.q4] || '未定']);
+  }
+
+  if (!early) {
+    const sizeMap = ['20名くらいまで', '50名前後', '100名くらい以上', 'まだわからない（50名想定）'];
+    items.push(['何人くらい呼びたいか', sizeMap[Number(answers.q5)] || '']);
+
+    const moodMap = ['しっとり（ゆっくり語らい、思い出をたどる）', 'わいわい（にぎやかに、みんなで楽しむ）', '両方（前半はしっとり、後半はわいわい）'];
+    items.push(['どんな雰囲気にしたいか', moodMap[Number(answers.q6)] || '']);
+
+    const calc = getCalculation();
+    const venueList = calc.hasStageNeeds ? VENUE_TABLE.stage : VENUE_TABLE.normal;
+    items.push(['おすすめの会場', venueList[Number(answers.q5)][Number(answers.q6)]]);
+
+    const extras = (answers.q7 || []).filter(i => i !== 7).map(i => {
+      const it = EXTRAS[i];
+      return it.isOther && answers.q7_other ? `その他（${answers.q7_other}）` : it.name;
+    });
+    items.push(['特別なこと', extras.length ? extras.join('、') : '特になし']);
+
+    const readerMap = {
+      family: 'ご家族・ご親族のどなたか',
+      friend: 'ご友人',
+      work: '仕事の仲間',
+      none: '読んでほしくない',
+      undecided: 'まだ決めていない'
+    };
+    items.push(['感謝の言葉', readerMap[answers.q8] || '']);
+
+    const code = $('result').dataset.plan;
+    items.push(['ご提案の会のかたち（仮）', PLANS[code] ? PLANS[code].name : '']);
+    items.push(['費用の目安（仮）', calc.totalStr]);
+  } else {
+    items.push(['ご相談内容', 'ご本人へのお気持ちを大切にした面談からのスタート']);
+  }
+
+  const dl = $('summary-dl');
+  dl.replaceChildren();
+  items.forEach(([dtText, ddText]) => {
+    const dt = document.createElement('dt');
+    dt.textContent = dtText;
+    const dd = document.createElement('dd');
+    dd.textContent = ddText;
+    dl.append(dt, dd);
+  });
+}
+
+function openForm() {
+  $('survey-view').hidden = true;
+  $('thanks-view').hidden = true;
+  $('form-view').hidden = false;
+  renderFormSummary();
+  progress(null, false, 'form');
+  move('form-view');
+}
+
+$('consult').addEventListener('click', openForm);
+
+$('form-back').addEventListener('click', () => {
+  $('form-view').hidden = true;
+  $('survey-view').hidden = false;
+  $('result').hidden = false;
+  progress(resultFrom, true);
+  move('result');
+});
+
+// フォーム送信
+$('inquiry-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = $('form-name').value.trim();
+  const email = $('form-email').value.trim();
+  const errors = [];
+
+  if (!name) {
+    errors.push('お名前を入力してください。');
+  }
+  if (!email) {
+    errors.push('メールアドレスを入力してください。');
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errors.push('正しいメールアドレスの形式で入力してください（例：yamada@example.com）。');
+  }
+
+  const errorEl = $('form-error');
+  if (errors.length) {
+    errorEl.hidden = false;
+    errorEl.replaceChildren();
+    const title = document.createElement('strong');
+    title.textContent = '入力内容をご確認ください：';
+    const ul = document.createElement('ul');
+    errors.forEach(msg => {
+      const li = document.createElement('li');
+      li.textContent = msg;
+      ul.appendChild(li);
+    });
+    errorEl.append(title, ul);
+    if (!name) $('form-name').focus();
+    else if (!email) $('form-email').focus();
+    return;
+  }
+
+  errorEl.hidden = true;
+  errorEl.replaceChildren();
+
+  // 自動返信メール文面プレビューの生成
+  const mailText =
+`件名：【株式会社COMET】お問い合わせありがとうございます（面談日程のご案内）
+
+${name} 様
+
+このたびは、感謝を伝える一日（生前葬）のシミュレーションをご利用いただき、またお問い合わせをいただき誠にありがとうございます。
+株式会社COMETでございます。
+
+ご入力いただいたご希望内容をもとに、専任のプランナーが準備を進めております。
+まずはご希望やお気持ちを詳しくお伺いするため、オンライン（Zoom）または対面での面談をご案内しております。
+
+下記の日程調整リンクより、ご都合の良い日時をお選びください。
+
+▼ 面談の日程調整はこちら
+【Jicooの生前葬用リンク（未発行）】
+
+※日程のご都合がつかない場合や、事前にご質問がございましたら、本メールへのご返信にてお気軽にお知らせください。
+※数日たっても日程のご登録がない場合は、担当者より改めてご連絡させていただく場合がございます。
+
+--------------------------------------------------
+株式会社COMET
+--------------------------------------------------`;
+
+  $('mail-preview').textContent = mailText;
+
+  // 画面切り替え
+  $('form-view').hidden = true;
+  $('thanks-view').hidden = false;
+  progress(null, false, 'thanks');
+  move('thanks-view');
+});
+
+function restartAll() {
+  allQuestions.forEach(clearQuestion);
+  answers = {};
+  resultFrom = 'q8';
+  $('inquiry-form').reset();
+  $('form-error').hidden = true;
+  $('form-error').replaceChildren();
+  hideAfter('q1');
+  $('q1').hidden = false;
+  progress('q1');
+  move('intro');
+}
+
+$('result-back').addEventListener('click', () => show(resultFrom));
+$('restart').addEventListener('click', restartAll);
+$('thanks-restart').addEventListener('click', restartAll);
+
+progress('q1');
+})();
+</script>
+</body>
+</html>
