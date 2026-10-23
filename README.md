@@ -2,7 +2,8 @@
 
 株式会社COMETの生前葬サービスLPの、打ち合わせ用の確認版です。
 
-- `wireframe_v6/` … LP（最新）
+- `wireframe_v7/` … LP（最新。お問い合わせフォームは `contact.html` に分離）
+- `wireframe_v6/` … LP（前の版）
 - `wireframe_v5/` … LP（前の版）
 - `mockup_survey_v4/` … 料金シミュレーション（最新・フォームは送信されません）
 - `mockup_survey_v3/` … 料金シミュレーション（前の版）

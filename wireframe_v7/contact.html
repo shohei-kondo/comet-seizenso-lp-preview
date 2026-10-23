@@ -1,0 +1,1653 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>お問い合わせ｜生前葬の企画・運営支援｜株式会社COMET</title>
+<style>
+:root {
+  --bg: #FAF7F2;
+  --surface: #FFFFFF;
+  --ink: #292D29;
+  --muted: #4F554F;
+  --btn-bg: #315447;
+  --btn-hover: #233e34;
+  --btn-text: #FFFFFF;
+  --accent: #B49A69;
+  --line: #E2DDD5;
+  --line-strong: #C4BCB0;
+  --soft: #F4EFEA;
+  --warm: #EFE9DF;
+  --dark-section: #292D29;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-bottom: 110px;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+button, a, summary, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button, input, select, textarea {
+  font: inherit;
+}
+a {
+  color: inherit;
+  text-underline-offset: 5px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h1, h2, h3, h4, p, ul, ol, figure, blockquote {
+  margin: 0;
+}
+h1, h2, h3, h4 {
+  line-height: 1.55;
+}
+h2 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: .035em;
+}
+h3 {
+  font-size: 20px;
+}
+p + p {
+  margin-top: 14px;
+}
+.wrap {
+  width: min(960px, calc(100% - 40px));
+  margin-inline: auto;
+}
+section {
+  padding: 64px 0;
+}
+.soft {
+  background: var(--soft);
+}
+.warm {
+  background: var(--warm);
+}
+
+/* 見出し装飾 */
+.section-heading {
+  text-align: center;
+  margin-bottom: 34px;
+}
+.section-heading:after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  margin: 20px auto 0;
+}
+.eyebrow {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: var(--muted);
+  margin-bottom: 9px;
+}
+.section-subnote {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: -18px;
+  margin-bottom: 28px;
+}
+
+/* ボタン共通（56px以上・白文字・深緑） */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 12px 24px;
+  border: 1px solid var(--btn-bg);
+  border-radius: 8px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  box-shadow: 0 4px 0 #1b2f28;
+  text-align: center;
+  transition: background .2s, transform .1s, box-shadow .1s;
+  cursor: pointer;
+}
+.button:hover {
+  background: var(--btn-hover);
+}
+.button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #1b2f28;
+}
+.button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+.button span {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.button-sub {
+  background: #FFFFFF;
+  color: var(--btn-bg);
+  border: 2px solid var(--btn-bg);
+  box-shadow: 0 4px 0 var(--line-strong);
+}
+.button-sub:hover {
+  background: var(--soft);
+  color: var(--btn-hover);
+}
+.button-sub:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--line-strong);
+}
+
+/* 最上部注意帯 */
+.draft-notice {
+  background: #EAE5DC;
+  border-bottom: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 12px 0;
+  text-align: center;
+}
+
+/* 仮バッジ */
+.provisional {
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 0 5px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #7A6337;
+  background: #FFFDF9;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
+/* ヘッダー */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 84px;
+}
+.brand {
+  flex: 0 1 170px;
+  min-width: 0;
+  padding: 10px 0;
+}
+.logo {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  letter-spacing: .1em;
+  line-height: 1.2;
+  border: 1px solid var(--line-strong);
+  padding: 8px 10px;
+  font-weight: 800;
+  text-align: center;
+  background: var(--bg);
+}
+.service-name {
+  margin-top: 5px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: nowrap;
+  background: var(--surface);
+}
+.service-name .provisional {
+  margin-left: 3px;
+}
+.header-note {
+  display: none;
+}
+.button-header {
+  flex: 0 1 200px;
+  min-width: 0;
+  padding: 10px 14px;
+  font-size: 14px;
+  min-height: 56px;
+  box-shadow: none;
+}
+
+/* ファーストビュー (L3: 写真を主役に見せ、文字背面に白帯・影) */
+.hero {
+  position: relative;
+  padding: 0;
+  background: #202020;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  /* 膜を大幅に薄くし、写真の宴会風景・光をしっかりと主役に見せる */
+  background: linear-gradient(135deg, rgba(20, 24, 22, 0.45) 0%, rgba(20, 24, 22, 0.15) 50%, rgba(20, 24, 22, 0.35) 100%);
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  min-height: 600px;
+  padding: 48px 0 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-copy {
+  position: relative;
+  max-width: 680px;
+}
+.hero-label {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 8px 16px;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.hero h1 {
+  font-size: 30px;
+  letter-spacing: .035em;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.hero h1 span {
+  background: rgba(255, 255, 255, 0.96);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 6px 12px;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  display: inline;
+}
+.hero-sub {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 20px;
+  font-weight: 500;
+  line-height: 1.85;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.hero-sub p + p {
+  margin-top: 10px;
+}
+.badges {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 20px;
+}
+.badges li {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.photo-note-hero {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.94);
+  padding: 4px 12px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  margin-top: 10px;
+}
+
+/* FV直下のシミュレーション誘導帯 */
+.hero-lead-cta {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 36px 0;
+  text-align: center;
+}
+.lead-cta-card {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.lead-cta-text {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.button-large {
+  max-width: 480px;
+  margin-inline: auto;
+  font-size: 18px;
+  padding: 16px 28px;
+}
+
+/* 問い合わせ帯（途中：シミュレーション誘導のみ） */
+.booking {
+  padding: 44px 0;
+  background: var(--dark-section);
+  color: #FFFFFF;
+  text-align: center;
+}
+.booking .section-heading {
+  margin-bottom: 16px;
+}
+.booking .eyebrow {
+  color: #D6D0C5;
+}
+.booking h2 {
+  font-size: 24px;
+  color: #FFFFFF;
+}
+.booking .section-heading:after {
+  background: var(--accent);
+  margin-top: 14px;
+}
+.booking > .wrap > p {
+  font-size: 16px;
+  color: #E6E2DC;
+}
+.booking-card {
+  max-width: 620px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 24px 20px;
+  margin: 22px auto 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.booking-card .button {
+  width: 100%;
+}
+
+/* チェックリスト（こんな想いはありませんか？） */
+.checks {
+  list-style: none;
+  padding: 0;
+}
+.checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+}
+.checks li:first-child {
+  border-top: 1px solid var(--line);
+}
+.checks li:before {
+  content: "✔";
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 800;
+  color: var(--btn-bg);
+  flex-shrink: 0;
+}
+.concern-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px 20px;
+  max-width: 760px;
+  margin: 0 auto;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+}
+
+/* 代表メッセージ（L5: 「こんな想い」の直後） */
+.message-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.message-layout {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+.message-subheading {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--btn-bg);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+}
+.message-portrait-wrap {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.message-photo figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  text-align: center;
+}
+.message-body {
+  font-size: 16px;
+  line-height: 1.9;
+}
+.message-body p {
+  color: var(--ink);
+}
+.message-body blockquote {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.85;
+  margin: 16px 0;
+  padding: 16px 18px;
+  background: var(--soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+}
+.signature {
+  margin-top: 20px;
+  font-size: 15px;
+  color: var(--muted);
+}
+.signature strong {
+  font-size: 18px;
+  display: block;
+  color: var(--ink);
+  margin-top: 2px;
+}
+
+/* 企画から当日運営まで、まとめてお任せください（L4: 統合ブロック） */
+.support-grid {
+  display: grid;
+  gap: 24px;
+}
+.support-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+}
+.support-img-wrap {
+  height: 200px;
+  overflow: hidden;
+  background: var(--soft);
+}
+.support-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.support-body {
+  padding: 22px 20px;
+  flex: 1;
+}
+.support-no {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.support-body h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+.support-body p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* あなたなら、誰に何を伝えたいですか？ */
+.questions {
+  display: grid;
+  gap: 18px;
+}
+.question-card {
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 24px;
+  background: var(--surface);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+}
+.question-no {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.question-card h3 {
+  margin: 8px 0 10px;
+  font-size: 20px;
+}
+.question-card p {
+  color: var(--muted);
+}
+
+/* 料金ブロック */
+.price-lead-card {
+  max-width: 700px;
+  margin-inline: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px 22px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.price-lead-text {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+/* ご相談から当日まで（L6: 統合ブロック＆インラインSVGアイコン） */
+.flow-step-list {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+.flow-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.flow-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: var(--soft);
+  border: 1px solid var(--line-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--btn-bg);
+}
+.flow-content {
+  flex: 1;
+}
+.flow-step-badge {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: .05em;
+  margin-bottom: 4px;
+  display: block;
+}
+.flow-content h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.flow-content p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+/* STEP 6: 当日の特別なレイアウト */
+.flow-card-final {
+  background: #FFFDF9;
+  border: 2px solid var(--accent);
+  flex-direction: column;
+}
+.flow-final-header {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  width: 100%;
+}
+.flow-final-header .flow-icon-wrap {
+  background: var(--warm);
+  border-color: var(--accent);
+  color: #7A6337;
+}
+.flow-day-timeline {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line-strong);
+  width: 100%;
+}
+.flow-day-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.flow-day-item h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--btn-bg);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.flow-day-item h4:before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.flow-day-item p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+.flow-day-photo {
+  margin-top: 18px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.flow-day-photo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.flow-day-photo figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--surface);
+  padding: 6px 12px;
+  text-align: center;
+}
+
+/* 第1号のお客様の帯 */
+.first {
+  background: var(--warm);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 48px 0;
+}
+.first-inner {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+.first-photo-wrap {
+  text-align: center;
+}
+.first-img {
+  width: 100%;
+  max-width: 360px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 auto;
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.photo-note-small {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.first-text {
+  text-align: center;
+}
+.first-text .section-heading {
+  margin-bottom: 18px;
+}
+.first-text .section-heading:after {
+  margin-top: 14px;
+}
+.first-text h2 {
+  font-size: 23px;
+}
+.first-text p {
+  max-width: 640px;
+  margin-inline: auto;
+}
+.first-text a {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--btn-bg);
+  display: inline-block;
+  margin-top: 12px;
+}
+
+/* よくある質問 */
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.faq-list summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 14px;
+  font-weight: 700;
+  min-height: 64px;
+}
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+.faq-list summary:before {
+  content: "Q";
+  font: bold 22px Georgia, serif;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.faq-list summary:after {
+  content: "＋";
+  font-size: 20px;
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--btn-bg);
+}
+.faq-list details[open] summary:after {
+  content: "−";
+}
+.answer {
+  padding: 0 16px 20px 44px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.answer:before {
+  content: "A. ";
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* 対応エリア（共通ルール: 東京・愛知・大阪に統一） */
+.area-layout {
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+.area-map-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 32px 20px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+.area-map-badge {
+  display: inline-block;
+  background: var(--warm);
+  border: 1px solid var(--accent);
+  color: #7A6337;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.map-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.map-labels > span {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px 20px;
+  background: var(--bg);
+  border: 2px solid var(--line-strong);
+  border-radius: 6px;
+  color: var(--ink);
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+.tags span {
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  background: var(--surface);
+  padding: 6px 14px;
+  font-weight: 700;
+}
+
+/* 会社概要テーブル (L1: 電話番号 050-3159-3429) */
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.company-table tr {
+  border-bottom: 1px solid var(--line);
+}
+.company-table tr:last-child {
+  border-bottom: none;
+}
+.company-table th, .company-table td {
+  font-size: 16px;
+  padding: 16px 14px;
+  vertical-align: top;
+}
+.company-table th {
+  width: 90px;
+  font-weight: 700;
+  background: var(--soft);
+  border-right: 1px solid var(--line);
+}
+.company-phone {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--btn-bg);
+  display: inline-block;
+}
+.phone-notice {
+  font-size: 13px !important;
+  color: var(--muted) !important;
+  font-weight: normal !important;
+  margin-top: 6px !important;
+}
+
+/* 最下部お問い合わせセクション (L7: 最下部フォーム + L1: 電話番号) */
+.contact-section {
+  padding: 64px 0 80px;
+  background: var(--soft);
+}
+.contact-lead-banner {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px 20px;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 36px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+}
+.contact-lead-banner p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--ink);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.contact-lead-banner .button {
+  max-width: 440px;
+  margin-inline: auto;
+}
+.contact-container {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px 20px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+}
+.form-title {
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.form-intro {
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 28px;
+}
+.form-group {
+  margin-bottom: 26px;
+}
+.form-group > label, .form-legend {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.badge-required {
+  display: inline-block;
+  background: #C73B3B;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.badge-optional {
+  display: inline-block;
+  background: #737B75;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.radio-group, .checkbox-group {
+  display: grid;
+  gap: 10px;
+}
+.choice-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 12px 14px;
+  cursor: pointer;
+  min-height: 48px;
+}
+.choice-item:hover {
+  background: var(--warm);
+}
+.choice-item input[type="radio"], .choice-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.choice-item span {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.input-text, .select-input, .textarea-input {
+  width: 100%;
+  padding: 14px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  font-size: 16px;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 52px;
+}
+.input-text:focus, .select-input:focus, .textarea-input:focus {
+  background: var(--surface);
+  border-color: var(--accent);
+}
+.textarea-input {
+  min-height: 120px;
+  line-height: 1.7;
+  resize: vertical;
+}
+.other-input-wrap {
+  margin-top: 8px;
+  padding-left: 28px;
+}
+.form-submit-wrap {
+  margin-top: 36px;
+  text-align: center;
+}
+.form-submit-wrap .button {
+  width: 100%;
+  max-width: 440px;
+  margin-inline: auto;
+  font-size: 18px;
+}
+.form-complete-message {
+  background: var(--warm);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 28px 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+.form-complete-message h3 {
+  color: var(--btn-bg);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.form-complete-message p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+/* 最下部電話枠 (L1) */
+.contact-phone-box {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.contact-phone-box h3 {
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.phone-number-link {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--btn-bg);
+  text-decoration: none;
+  padding: 8px 16px;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  margin: 6px 0;
+  letter-spacing: .05em;
+}
+.phone-number-link:hover {
+  background: var(--warm);
+}
+
+/* フッター */
+.footer {
+  padding: 40px 0 120px;
+  background: var(--warm);
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+.footer strong {
+  font-size: 20px;
+  color: var(--ink);
+}
+.footer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+.footer nav a {
+  font-size: 15px;
+  padding: 6px;
+  color: var(--muted);
+}
+.footer nav a:hover {
+  color: var(--ink);
+}
+.footer small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* スマホ下部固定ボタン */
+.sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.06);
+  z-index: 100;
+}
+.sticky .button {
+  width: 100%;
+  font-size: 17px;
+  box-shadow: none;
+}
+
+/* ========================================================
+   レスポンシブ（タブレット・PC: 700px以上）
+   ======================================================== */
+@media (min-width: 700px) {
+  section {
+    padding: 80px 0;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  .header-inner {
+    min-height: 96px;
+  }
+  .logo {
+    font-size: 28px;
+  }
+  .header-note {
+    display: block;
+    font-size: 16px;
+    color: var(--muted);
+    margin-right: auto;
+  }
+  .button-header {
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+  .hero-inner {
+    min-height: 640px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .hero h1 {
+    font-size: 40px;
+    max-width: 700px;
+    line-height: 1.65;
+  }
+  .hero-sub {
+    max-width: 640px;
+    padding: 22px 26px;
+  }
+  .badges {
+    width: 440px;
+    gap: 16px;
+    margin: 28px 0 20px;
+  }
+  .badges li {
+    font-size: 15px;
+  }
+  .mobile-break {
+    display: none;
+  }
+  .booking {
+    padding: 56px 0;
+  }
+  .booking h2 {
+    font-size: 30px;
+  }
+  .booking-card {
+    padding: 30px 40px;
+  }
+  .booking-card .button {
+    font-size: 18px;
+  }
+  .message-card {
+    padding: 36px 32px;
+  }
+  .message-layout {
+    grid-template-columns: 200px 1fr;
+    gap: 36px;
+  }
+  .support-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .questions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .flow-step-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .flow-card-final {
+    grid-column: span 2;
+  }
+  .flow-day-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .flow-day-photo img {
+    height: 280px;
+  }
+  .first-inner {
+    grid-template-columns: 320px 1fr;
+    gap: 36px;
+    text-align: left;
+  }
+  .first-text {
+    text-align: left;
+  }
+  .first-text .section-heading {
+    text-align: left;
+  }
+  .first-text .section-heading:after {
+    margin-left: 0;
+  }
+  .first-text p {
+    margin-inline: 0;
+  }
+  .area-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .company-table th {
+    width: 150px;
+    padding-left: 20px;
+  }
+  .company-table td {
+    padding-left: 20px;
+  }
+  .contact-container {
+    padding: 40px 36px;
+  }
+  .radio-group-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .checkbox-group-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer {
+    padding: 48px 0 36px;
+  }
+  .footer nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .sticky {
+    display: none;
+  }
+}
+
+/* ========================================================
+   超小型端末（320px〜350px）の横はみ出し防止
+   ======================================================== */
+@media (max-width: 350px) {
+  .wrap {
+    width: calc(100% - 24px);
+  }
+  .header-inner {
+    gap: 8px;
+  }
+  .brand {
+    flex-basis: 135px;
+  }
+  .logo {
+    font-size: 20px;
+    padding: 6px 8px;
+  }
+  .service-name {
+    font-size: 11px;
+  }
+  .button-header {
+    font-size: 13px;
+    padding: 8px 10px;
+    flex-basis: 145px;
+    min-height: 56px;
+  }
+  .hero h1 {
+    font-size: 24px;
+  }
+  .badges {
+    gap: 6px;
+  }
+  .badges li {
+    font-size: 11px;
+    padding: 4px;
+  }
+  .button {
+    font-size: 15px;
+    padding: 12px 14px;
+    min-height: 56px;
+  }
+  .company-table th {
+    width: 85px;
+    font-size: 15px;
+    padding: 12px 8px;
+  }
+  .company-table td {
+    font-size: 15px;
+    padding: 12px 8px;
+  }
+  .flow-card {
+    gap: 12px;
+    padding: 18px 14px;
+  }
+  .flow-icon-wrap {
+    width: 44px;
+    height: 44px;
+  }
+  .flow-icon-wrap svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- 最上部注意帯 -->
+<aside class="draft-notice" aria-label="打ち合わせ用確認版の注意">
+  <div class="wrap">
+    この画面は打ち合わせ用の確認版です。写真は、COMETがこれまでに運営したイベントのものです。名称は仮置きです。
+  </div>
+</aside>
+
+<!-- ヘッダー (Block 0) -->
+<header data-block="0">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="logo" aria-label="COMET ロゴ枠">COMET</div>
+      <div class="service-name">サービス名（未定）<small class="provisional">仮</small></div>
+    </div>
+    <p class="header-note">人生の節目の会をサポート</p>
+    <a class="button button-header" href="../mockup_survey_v4/index.html">料金シミュレーション</a>
+  </div>
+</header>
+
+<main>
+  <!-- ファーストビュー (Block 1) -->
+  
+
+  <!-- FV直下 シミュレーション誘導帯 (Block 1-CTA) -->
+  
+
+  <!-- 問い合わせ帯 1 (Block 2) -->
+  
+
+  <!-- こんな想いはありませんか？ (Block 3) -->
+  
+
+  <!-- 代表メッセージ (Block 4 - L5: 新位置・想いを伝える) -->
+  
+
+  <!-- 企画から当日運営まで、まとめてお任せください (Block 5 - L4: 統合ブロック) -->
+  
+
+  <!-- あなたなら、誰に何を伝えたいですか？ (Block 6) -->
+  
+
+  <!-- 問い合わせ帯 2 (Block 7) -->
+  
+
+  <!-- 料金について (Block 8) -->
+  
+
+  <!-- ご相談から当日まで (Block 9 - L6: 統合ブロック＆インラインSVGアイコン) -->
+  
+
+  <!-- 第1号のお客様と、一緒につくらせてください (Block 10) -->
+  
+
+  <!-- よくある質問 (Block 11) -->
+  
+
+  <!-- 対応エリア (Block 12) -->
+  
+
+  <!-- 会社概要 (Block 13 - L1: 電話番号設置) -->
+  
+
+  <!-- 最下部：お問い合わせフォーム ＆ お電話 (Block 14 - L7 & L1) -->
+  <section class="contact-section" id="contact" data-block="14">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">CONTACT</span>
+        <h2>お問い合わせ</h2>
+      </div>
+      <p class="back-link" style="text-align:center;margin:-8px 0 24px;"><a href="index.html">← ページのトップへ戻る</a></p>
+      <div style="display:none">
+      </div>
+
+      <!-- フォームの上の一文とシミュレーションリンク -->
+      <div class="contact-lead-banner">
+        <p>料金シミュレーションをご利用いただくと、より具体的な目安をメールでお届けします。</p>
+        <a class="button" href="../mockup_survey_v4/index.html">
+          料金シミュレーションを試す<span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- 最下部問い合わせフォーム（シミュレーション内容入力型） -->
+      <div class="contact-container">
+        <h3 class="form-title">ご相談・お問い合わせフォーム</h3>
+        <p class="form-intro">会のご希望やご質問など、お気軽にお聞かせください。</p>
+
+        <form id="contact-form" action="#" method="post">
+          <!-- 1. どなたのための会か -->
+          <div class="form-group">
+            <label class="form-legend">どなたのための会ですか？ <span class="badge-optional">任意</span></label>
+            <div class="radio-group radio-group-cols-2">
+              <label class="choice-item">
+                <input type="radio" name="target" value="ご自身">
+                <span>ご自身</span>
+              </label>
+              <label class="choice-item">
+                <input type="radio" name="target" value="ご家族">
+                <span>ご家族</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 2. 人数 -->
+          <div class="form-group">
+            <label class="form-legend">参加人数の目安 <span class="badge-optional">任意</span></label>
+            <div class="radio-group radio-group-cols-2">
+              <label class="choice-item">
+                <input type="radio" name="scale" value="20名くらいまで">
+                <span>20名くらいまで</span>
+              </label>
+              <label class="choice-item">
+                <input type="radio" name="scale" value="50名前後">
+                <span>50名前後</span>
+              </label>
+              <label class="choice-item">
+                <input type="radio" name="scale" value="100名くらい以上">
+                <span>100名くらい以上</span>
+              </label>
+              <label class="choice-item">
+                <input type="radio" name="scale" value="まだわからない">
+                <span>まだわからない</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 3. 雰囲気 -->
+          <div class="form-group">
+            <label class="form-legend">希望する会の雰囲気 <span class="badge-optional">任意</span></label>
+            <div class="radio-group radio-group-cols-2">
+              <label class="choice-item">
+                <input type="radio" name="mood" value="しっとり">
+                <span>しっとり</span>
+              </label>
+              <label class="choice-item">
+                <input type="radio" name="mood" value="わいわい">
+                <span>わいわい</span>
+              </label>
+              <label class="choice-item">
+                <input type="radio" name="mood" value="両方">
+                <span>両方</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 4. やってみたい特別なこと -->
+          <div class="form-group">
+            <label class="form-legend">やってみたい特別なこと（複数選択可） <span class="badge-optional">任意</span></label>
+            <div class="checkbox-group checkbox-group-cols-2">
+              <label class="choice-item">
+                <input type="checkbox" name="special" value="楽器演奏">
+                <span>楽器演奏</span>
+              </label>
+              <label class="choice-item">
+                <input type="checkbox" name="special" value="ダンス">
+                <span>ダンス</span>
+              </label>
+              <label class="choice-item">
+                <input type="checkbox" name="special" value="ヘアメイク・メイク">
+                <span>ヘアメイク・メイク</span>
+              </label>
+              <label class="choice-item">
+                <input type="checkbox" name="special" value="納棺体験">
+                <span>納棺体験</span>
+              </label>
+              <label class="choice-item">
+                <input type="checkbox" name="special" value="思い出の映像上映">
+                <span>思い出の映像上映</span>
+              </label>
+              <label class="choice-item">
+                <input type="checkbox" name="special" value="記録撮影">
+                <span>記録撮影</span>
+              </label>
+              <label class="choice-item">
+                <input type="checkbox" name="special" value="特になし">
+                <span>特になし</span>
+              </label>
+            </div>
+            <div class="other-input-wrap">
+              <label for="special_other" style="font-size:14px; color:var(--muted); display:block; margin-bottom:4px;">その他（自由入力）</label>
+              <input type="text" id="special_other" name="special_other" class="input-text" placeholder="例：記念誌の配布、思い出の品の展示など">
+            </div>
+          </div>
+
+          <!-- 5. お名前 -->
+          <div class="form-group">
+            <label for="user_name">お名前 <span class="badge-required">必須</span></label>
+            <input type="text" id="user_name" name="user_name" class="input-text" required placeholder="例：山田 太郎">
+          </div>
+
+          <!-- 6. メールアドレス -->
+          <div class="form-group">
+            <label for="user_email">メールアドレス <span class="badge-required">必須</span></label>
+            <input type="email" id="user_email" name="user_email" class="input-text" required placeholder="例：example@example.com">
+          </div>
+
+          <!-- 7. 電話番号 -->
+          <div class="form-group">
+            <label for="user_tel">電話番号 <span class="badge-optional">任意</span></label>
+            <input type="tel" id="user_tel" name="user_tel" class="input-text" placeholder="例：090-1234-5678">
+          </div>
+
+          <!-- 8. ご相談内容 -->
+          <div class="form-group">
+            <label for="user_message">ご相談内容・ご質問 <span class="badge-optional">任意</span></label>
+            <textarea id="user_message" name="user_message" class="textarea-input" placeholder="ご希望の開催時期や場所、気になっていることなどをご自由にご記入ください。"></textarea>
+          </div>
+
+          <!-- 送信ボタン -->
+          <div class="form-submit-wrap">
+            <button type="submit" class="button">お問い合わせを送信する</button>
+          </div>
+        </form>
+
+        <!-- 送信完了画面表示枠（モック動作用） -->
+        <div id="form-complete" class="form-complete-message" style="display:none;" role="status">
+          <h3>お問い合わせありがとうございました</h3>
+          <p>入力いただいた内容を受け付けました。<br>担当者より内容を確認のうえ、メールまたはお電話にて折り返しご連絡いたします。</p>
+          <div style="margin-top:20px;">
+            <a class="button" href="../mockup_survey_v4/index.html">
+              料金シミュレーションを試す<span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- お電話枠 (L1) -->
+        <div class="contact-phone-box">
+          <h3>お電話でのご相談</h3>
+          <p>直接お話ししながら相談されたい場合は、お電話でも承っております。</p>
+          <div>
+            <a class="phone-number-link" href="tel:05031593429">050-3159-3429</a>
+          </div>
+          <p class="phone-notice">※お電話がつながりにくい場合は、折り返しご連絡いたします<br>（営業時間 9:00〜18:00）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- フッター (Block 15) -->
+<footer class="footer" data-block="15">
+  <div class="wrap">
+    <strong>株式会社COMET</strong>
+    <nav aria-label="フッター">
+      <a href="https://comet-event.co.jp/privacy/" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+      <a href="#company">会社概要</a>
+    </nav>
+    <small>© COMET Co., Ltd.</small>
+  </div>
+</footer>
+
+<!-- スマホ画面下部固定ボタン -->
+<div class="sticky">
+  <a class="button" href="../mockup_survey_v4/index.html">
+    料金シミュレーション（約1分）<span aria-hidden="true">→</span>
+  </a>
+</div>
+
+<script>
+// フォーム送信モックアップ処理
+var __cf = document.getElementById('contact-form');
+if (__cf) __cf.addEventListener('submit', function(e) {
+  e.preventDefault();
+  // 簡易バリデーション通過後に完了メッセージ表示へ切り替え
+  this.style.display = 'none';
+  var completeBox = document.getElementById('form-complete');
+  completeBox.style.display = 'block';
+  completeBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+</script>
+
+</body>
+</html>
